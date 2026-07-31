@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useLocation } from 'react-router-dom'
+import { SITE_URL } from '../data/productos'
 
 interface PaginaTextoProps {
   titulo: string
@@ -8,11 +10,14 @@ interface PaginaTextoProps {
 }
 
 export default function PaginaTexto({ titulo, description, children }: PaginaTextoProps) {
+  const { pathname } = useLocation()
+
   return (
     <>
       <Helmet>
         <title>{titulo} | Picanticos</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={`${SITE_URL}${pathname}`} />
       </Helmet>
 
       <section className="px-5 py-16 md:py-[110px]">

@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "fotos": "node scripts/procesar-fotos.mjs",
+    "favicon": "node scripts/generar-favicon.mjs",
+    "sitemap": "node scripts/generar-sitemap.mjs",
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generar-sitemap.mjs && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -15,6 +17,7 @@
     "@vitejs/plugin-react": "^6.0.4",
     "autoprefixer": "^10.5.4",
     "heic-convert": "^2.1.0",
+    "png-to-ico": "^3.0.2",
     "postcss": "^8.5.25",
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.19",

@@ -206,3 +206,10 @@ export const envio = {
 }
 
 export const whatsapp = '573054686226'
+
+export const SITE_URL = 'https://picanticos.shop'
+
+export const redes = {
+  instagram: 'https://www.instagram.com/picanticosshop/',
+  tiktok: 'https://www.tiktok.com/@picanticosshop',
+}

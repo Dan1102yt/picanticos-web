@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { whatsapp } from '../data/productos'
+import { redes, whatsapp } from '../data/productos'
 
 const mensaje = encodeURIComponent('Hola Picanticos 💫')
 const urlWhatsApp = `https://api.whatsapp.com/send?phone=${whatsapp}&text=${mensaje}`
@@ -17,8 +17,8 @@ const AYUDA = [
 ]
 
 const REDES = [
-  { label: 'Instagram', href: 'https://www.instagram.com/picanticosshop/' },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@picanticosshop' },
+  { label: 'Instagram', href: redes.instagram },
+  { label: 'TikTok', href: redes.tiktok },
   { label: 'WhatsApp', href: urlWhatsApp },
 ]
 

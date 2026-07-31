@@ -1,8 +1,9 @@
 import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import {
+  SITE_URL,
   envio,
   formatearPrecio,
   porSlug,
@@ -36,6 +37,7 @@ const CATEGORIA_ANCLA: Record<Producto['categoria'], string> = {
 type SeccionId = 'material' | 'envio' | 'cambios'
 
 function FichaProducto({ producto }: { producto: Producto }) {
+  const reducirMovimiento = useReducedMotion()
   const [indiceActivo, setIndiceActivo] = useState(0)
   const [colorSeleccionado, setColorSeleccionado] = useState(producto.colores?.[0])
   const [tallaSeleccionada, setTallaSeleccionada] = useState<string | undefined>(undefined)
@@ -52,8 +54,25 @@ function FichaProducto({ producto }: { producto: Producto }) {
   const sugeridos = relacionados(producto.slug)
 
   const titulo = `${producto.nombre} · ${producto.tipo} | Picanticos`
-  const ogImage = `https://picanticos.shop/${producto.imagenes[0]}-768.jpg`
-  const canonical = `https://picanticos.shop/producto/${producto.slug}`
+  const ogImage = `${SITE_URL}/${producto.imagenes[0]}-768.jpg`
+  const canonical = `${SITE_URL}/producto/${producto.slug}`
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: producto.nombre,
+    description: producto.descripcionCorta,
+    image: ogImage,
+    sku: producto.slug,
+    brand: { '@type': 'Brand', name: 'Picanticos' },
+    offers: {
+      '@type': 'Offer',
+      url: canonical,
+      price: producto.precio,
+      priceCurrency: 'COP',
+      availability: 'https://schema.org/InStock',
+    },
+  }
 
   const toggleSeccion = (id: SeccionId) =>
     setSeccionAbierta((actual) => (actual === id ? null : id))
@@ -68,6 +87,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
         <meta property="og:type" content="product" />
         <meta property="og:image" content={ogImage} />
         <link rel="canonical" href={canonical} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <section className="px-5 py-16 md:py-[110px]">
@@ -81,13 +101,12 @@ function FichaProducto({ producto }: { producto: Producto }) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: reducirMovimiento ? 0 : 0.3 }}
                   className="absolute inset-0"
                 >
                   <Imagen
                     base={producto.imagenes[indiceActivo]}
                     alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
-                    priority
                     className="h-full w-full object-cover"
                   />
                 </motion.div>
@@ -176,6 +195,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                     <button
                       key={color}
                       type="button"
+                      aria-pressed={colorSeleccionado === color}
                       onClick={() => setColorSeleccionado(color)}
                       className={`rounded-full border px-4 py-2 text-[12px] uppercase tracking-[0.1em] transition-colors ${
                         colorSeleccionado === color
@@ -200,6 +220,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                     <button
                       key={talla}
                       type="button"
+                      aria-pressed={tallaSeleccionada === talla}
                       onClick={() => setTallaSeleccionada(talla)}
                       className={`rounded-full border px-4 py-2 text-[12px] uppercase tracking-[0.1em] transition-colors ${
                         tallaSeleccionada === talla

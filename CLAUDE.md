@@ -49,7 +49,7 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - [x] 2 · ProductoCard, SeccionLenceria, SeccionJuegos, Revelar
 - [x] 3 · Manifiesto de imágenes, ProductoDetalle, useWhatsApp, router
 - [x] 4 · Fallback 404, tallas, nosotros, cierre, footer, páginas legales
-- [ ] 5 · Favicon, SEO, accesibilidad, performance, workflow de deploy
+- [x] 5 · Favicon, SEO, accesibilidad, performance, workflow de deploy
 - [ ] 6 · Dominio picanticos.shop
 
 Actualiza esta lista al final de cada sesión.

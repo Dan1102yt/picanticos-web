@@ -1,4 +1,4 @@
-import { formatearPrecio, whatsapp, type Producto } from '../data/productos'
+import { SITE_URL, formatearPrecio, whatsapp, type Producto } from '../data/productos'
 
 interface PedidoWhatsApp {
   producto: Producto
@@ -19,7 +19,7 @@ export function useWhatsApp({ producto, talla, color }: PedidoWhatsApp) {
 
   lineas.push(`Precio: ${formatearPrecio(producto.precio)}`)
   lineas.push('')
-  lineas.push(`https://picanticos.shop/producto/${producto.slug}`)
+  lineas.push(`${SITE_URL}/producto/${producto.slug}`)
 
   const mensaje = lineas.join('\n')
 

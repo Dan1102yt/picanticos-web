@@ -19,6 +19,9 @@ export default function Navbar() {
   useEffect(() => {
     if (!abierto) return
 
+    const scrollPrevio = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
     const panel = panelRef.current
     const focusables = panel
       ? Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
@@ -29,7 +32,6 @@ export default function Navbar() {
       if (e.key === 'Escape') {
         e.preventDefault()
         setAbierto(false)
-        botonRef.current?.focus()
         return
       }
 
@@ -48,7 +50,11 @@ export default function Navbar() {
     }
 
     document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = scrollPrevio
+      botonRef.current?.focus()
+    }
   }, [abierto])
 
   return (
