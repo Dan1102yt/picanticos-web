@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-noche text-marfil font-sans font-light text-[17px] leading-[1.7];
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.rosa');
+    outline-offset: 2px;
+  }
+}

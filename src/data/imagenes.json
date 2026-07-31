@@ -1,0 +1,138 @@
+{
+  "img/empaque": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1254,
+    "h": 1254
+  },
+  "img/hero": {
+    "widths": [
+      480,
+      768,
+      1440
+    ],
+    "w": 3785,
+    "h": 2160
+  },
+  "img/nosotros": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 768,
+    "h": 1063
+  },
+  "img/productos/fuego-nocturno-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 2160
+  },
+  "img/productos/fuego-nocturno-2": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 932,
+    "h": 2160
+  },
+  "img/productos/fuego-nocturno-3": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 934,
+    "h": 2160
+  },
+  "img/productos/kimono-malla-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1080,
+    "h": 1123
+  },
+  "img/productos/luna-traviesa-1": {
+    "widths": [
+      480
+    ],
+    "w": 759,
+    "h": 2160
+  },
+  "img/productos/luna-traviesa-2": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 942,
+    "h": 2160
+  },
+  "img/productos/luna-traviesa-3": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 810,
+    "h": 2160
+  },
+  "img/productos/pecado-unico-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1020,
+    "h": 2160
+  },
+  "img/productos/pecado-unico-2": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1053,
+    "h": 2160
+  },
+  "img/productos/satin-glow-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1124,
+    "h": 2160
+  },
+  "img/productos/satin-glow-2": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1030,
+    "h": 2160
+  },
+  "img/productos/satin-glow-3": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 996,
+    "h": 2160
+  },
+  "img/productos/torre-pasion-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 900,
+    "h": 1600
+  },
+  "img/productos/torre-pasion-2": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 900,
+    "h": 1600
+  }
+}
