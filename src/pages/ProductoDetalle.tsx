@@ -9,7 +9,7 @@ import {
   relacionados,
   type Producto,
 } from '../data/productos'
-import Imagen, { type ClaveImagen } from '../components/Imagen'
+import Imagen from '../components/Imagen'
 import ProductoCard from '../components/ProductoCard'
 import { useWhatsApp } from '../hooks/useWhatsApp'
 
@@ -85,7 +85,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                   className="absolute inset-0"
                 >
                   <Imagen
-                    base={producto.imagenes[indiceActivo] as ClaveImagen}
+                    base={producto.imagenes[indiceActivo]}
                     alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
                     priority
                     className="h-full w-full object-cover"
@@ -109,7 +109,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                     }`}
                   >
                     <Imagen
-                      base={img as ClaveImagen}
+                      base={img}
                       alt={`Miniatura ${i + 1} de ${producto.nombre}`}
                       className="h-full w-full object-cover"
                     />

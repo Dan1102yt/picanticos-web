@@ -1,5 +1,5 @@
 // Script de un solo uso: procesa las fotos originales del catálogo Picanticosshop.
-// Lee de la raíz del proyecto (solo lectura) y escribe los derivados en public/img.
+// Lee de fotos-originales/ (solo lectura) y escribe los derivados en public/img.
 import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import path from 'node:path';
@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const PKG_PATH = path.join(ROOT, 'package.json');
-const SOURCE_DIR = ROOT;
+const SOURCE_DIR = path.join(ROOT, 'fotos-originales');
 const PRODUCTOS_DIR = path.join(ROOT, 'public', 'img', 'productos');
 const IMG_DIR = path.join(ROOT, 'public', 'img');
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'imagenes.json');
@@ -99,6 +99,13 @@ function classify(base) {
 // --- main ------------------------------------------------------------------
 
 async function main() {
+  if (!existsSync(SOURCE_DIR)) {
+    console.error(
+      `No existe la carpeta "${path.relative(ROOT, SOURCE_DIR)}". Crea "fotos-originales/" en la raíz del proyecto y pon ahí las fotos antes de correr este script.`
+    );
+    process.exit(1);
+  }
+
   ensurePackageJson();
   ensureDeps();
 

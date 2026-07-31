@@ -9,6 +9,8 @@
 // etiquetado de composicion textil es obligatorio y una clienta puede reclamar
 // si no coincide.
 
+import type { ClaveImagen } from './claves'
+
 export type Categoria = 'lenceria' | 'juego'
 
 export interface Producto {
@@ -24,7 +26,7 @@ export interface Producto {
   tallas: string[]
   material: string
   cuidado: string
-  imagenes: string[]
+  imagenes: ClaveImagen[]
   colores?: string[]
 }
 

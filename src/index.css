@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-padding-top: 90px;
+  }
+
   body {
     @apply bg-noche text-marfil font-sans font-light text-[17px] leading-[1.7];
   }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Producto } from '../data/productos'
 import { formatearPrecio } from '../data/productos'
-import Imagen, { type ClaveImagen } from './Imagen'
+import Imagen from './Imagen'
 
 interface ProductoCardProps {
   producto: Producto
@@ -15,7 +15,7 @@ export default function ProductoCard({ producto }: ProductoCardProps) {
     >
       <div className="relative">
         <Imagen
-          base={producto.imagenes[0] as ClaveImagen}
+          base={producto.imagenes[0]}
           alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
           className="aspect-[3/4] w-full object-cover"
         />

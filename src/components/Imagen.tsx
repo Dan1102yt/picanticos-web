@@ -1,6 +1,5 @@
 import manifiesto from '../data/imagenes.json'
-
-export type ClaveImagen = keyof typeof manifiesto
+import type { ClaveImagen } from '../data/claves'
 
 interface ImagenProps {
   base: ClaveImagen
