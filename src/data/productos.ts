@@ -131,28 +131,6 @@ export const productos: Producto[] = [
   },
 
   {
-    slug: 'kimono-malla',
-    nombre: 'Kimono Sensual',
-    precio: 125000,
-    categoria: 'lenceria',
-    tipo: 'Kimono de malla · 4 piezas',
-    sensacion: 'Transparencia medida',
-    descripcionCorta:
-      'Kimono, brasier, tanga y ligas. Todo ya combinado, no tienes que armar nada.',
-    descripcionLarga:
-      'El set completo, pensado como un solo gesto: kimono de malla, brasier, tanga y ligas que ya combinan entre sí. La malla insinúa sin entregarlo todo, que es exactamente el punto. Si vas a comprar una sola pieza en tu vida, que sea la que no te obliga a decidir nada más.',
-    incluye: ['Kimono de malla', 'Brasier', 'Tanga', 'Par de ligas'],
-    tallas: ['S', 'M', 'L', 'XL'],
-    material:
-      'Malla elástica: 85% poliamida, 15% elastano. Bandas de las ligas con elastano.',
-    cuidado:
-      'Lavar a mano con agua fría, preferiblemente dentro de una bolsa de malla. No usar secadora ni planchar la malla.',
-    imagenes: [
-      'img/productos/kimono-malla-1',
-    ],
-  },
-
-  {
     slug: 'torre-pasion',
     nombre: 'Torre Pasión',
     precio: 75000,

@@ -9,6 +9,7 @@ const ProductoDetalle = lazy(() => import('./pages/ProductoDetalle'))
 const Envios = lazy(() => import('./pages/Envios'))
 const Cambios = lazy(() => import('./pages/Cambios'))
 const Privacidad = lazy(() => import('./pages/Privacidad'))
+const Descontinuado = lazy(() => import('./pages/Descontinuado'))
 
 // Slugs vivos en la bio de Instagram y TikTok desde el sitio anterior.
 const SLUGS_ANTIGUOS = [
@@ -16,7 +17,6 @@ const SLUGS_ANTIGUOS = [
   'fuego-nocturno',
   'luna-traviesa',
   'pecado-unico',
-  'kimono-malla',
   'torre-pasion',
 ]
 
@@ -36,6 +36,8 @@ export default function App() {
           <Route path="/envios" element={<Envios />} />
           <Route path="/cambios" element={<Cambios />} />
           <Route path="/privacidad" element={<Privacidad />} />
+          <Route path="/kimono-malla" element={<Descontinuado />} />
+          <Route path="/producto/kimono-malla" element={<Descontinuado />} />
           {SLUGS_ANTIGUOS.map((slug) => (
             <Route
               key={slug}

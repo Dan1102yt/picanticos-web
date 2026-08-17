@@ -21,7 +21,6 @@ const PRODUCT_KEYS = [
   'satin-glow',
   'luna-traviesa',
   'pecado-unico',
-  'kimono-malla',
   'torre-pasion',
   'fuego-nocturno',
 ];

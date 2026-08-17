@@ -51,5 +51,8 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - [x] 4 · Fallback 404, tallas, nosotros, cierre, footer, páginas legales
 - [x] 5 · Favicon, SEO, accesibilidad, performance, workflow de deploy
 - [ ] 6 · Dominio picanticos.shop
+- [x] 7 · Kimono Sensual (kimono-malla) descontinuado: fuera de productos.ts,
+      /kimono-malla y /producto/kimono-malla ahora muestran
+      src/pages/Descontinuado.tsx
 
 Actualiza esta lista al final de cada sesión.
