@@ -23,7 +23,7 @@ export default function SeccionNosotros() {
         />
 
         <div>
-          <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+          <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
             Nosotros
           </p>
           <blockquote
@@ -34,7 +34,7 @@ export default function SeccionNosotros() {
             <br />
             <span className="text-rosa">Vendemos para que te guste verte.</span>
           </blockquote>
-          <p className="mt-6 max-w-md text-marfil/80">
+          <p className="mt-6 max-w-md text-marfil/90">
             Somos una tienda colombiana pequeña. Elegimos cada pieza con
             proveedores nacionales, la enviamos en caja neutra y respondemos
             por WhatsApp nosotros mismos — no un bot.
@@ -46,7 +46,7 @@ export default function SeccionNosotros() {
                 <p className="font-display text-[44px] leading-none text-piel">
                   {metrica.numero}
                 </p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.34em] text-rosa opacity-55">
+                <p className="mt-2 text-[12px] uppercase tracking-[0.26em] text-rosa opacity-75">
                   {metrica.etiqueta}
                 </p>
               </div>

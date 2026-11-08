@@ -17,7 +17,7 @@ export default function SeccionCierre() {
           La noche <span className="italic text-rosa">ya empezó.</span>
         </h2>
 
-        <p className="mx-auto mt-6 max-w-md text-marfil/80">
+        <p className="mx-auto mt-6 max-w-md text-marfil/90">
           Escríbenos y te ayudamos a elegir. Respondemos personas, no bots,
           entre 8 a. m. y 10 p. m.
         </p>

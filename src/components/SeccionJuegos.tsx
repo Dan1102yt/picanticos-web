@@ -11,7 +11,7 @@ export default function SeccionJuegos() {
   return (
     <section id="juegos" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
           Juegos
         </p>
         <h2
@@ -20,7 +20,7 @@ export default function SeccionJuegos() {
         >
           Para <span className="italic text-rosa">los dos</span>
         </h2>
-        <p className="mt-5 max-w-md text-marfil/80">
+        <p className="mt-5 max-w-md text-marfil/90">
           Cuando la conversación ya no alcanza. Retos, risas y una excusa para
           apagar el celular.
         </p>
@@ -40,11 +40,11 @@ export default function SeccionJuegos() {
                   'linear-gradient(160deg, rgba(142,30,79,0.25), transparent)',
               }}
             >
-              <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+              <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
                 Regalo
               </p>
               <h3 className="mt-4 font-display text-[30px]">Arma tu noche</h3>
-              <p className="mt-4 max-w-xs text-[15px] text-marfil/80">
+              <p className="mt-4 max-w-xs text-[15px] text-marfil/90">
                 Un juego + una pieza de lencería o pijama, en un solo pedido y
                 en caja neutra.
               </p>
@@ -52,7 +52,7 @@ export default function SeccionJuegos() {
                 href={LINK_COMBO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block rounded-full bg-piel px-7 py-3 text-[11px] uppercase tracking-[0.2em] text-noche transition-opacity hover:opacity-90"
+                className="mt-8 inline-block rounded-full bg-piel px-7 py-3 text-[12px] uppercase tracking-[0.2em] text-noche transition-opacity hover:opacity-90"
               >
                 Armar combo
               </a>

@@ -16,7 +16,7 @@ export default function SeccionTallas() {
   return (
     <section id="tallas" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
           Antes de comprar
         </p>
         <h2
@@ -25,7 +25,7 @@ export default function SeccionTallas() {
         >
           Tu talla, <span className="italic text-rosa">sin adivinar</span>
         </h2>
-        <p className="mt-5 max-w-md text-marfil/80">
+        <p className="mt-5 max-w-md text-marfil/90">
           Mídete con una cinta sobre la piel, sin apretar. Si quedas entre dos
           tallas, pide la mayor.
         </p>
@@ -41,7 +41,7 @@ export default function SeccionTallas() {
                   {['Talla', 'Busto', 'Cintura', 'Cadera', 'Equivale a'].map((col) => (
                     <th
                       key={col}
-                      className="pb-4 text-[11px] font-normal uppercase tracking-[0.18em] text-rosa"
+                      className="pb-4 text-[12px] font-normal uppercase tracking-[0.18em] text-rosa"
                     >
                       {col}
                     </th>
@@ -57,10 +57,10 @@ export default function SeccionTallas() {
                     <td className="py-4 pr-4 font-display text-[19px] text-piel">
                       {fila.talla}
                     </td>
-                    <td className="py-4 pr-4 text-[14px] text-marfil/80">{fila.busto}</td>
-                    <td className="py-4 pr-4 text-[14px] text-marfil/80">{fila.cintura}</td>
-                    <td className="py-4 pr-4 text-[14px] text-marfil/80">{fila.cadera}</td>
-                    <td className="py-4 text-[14px] text-marfil/80">{fila.equivale}</td>
+                    <td className="py-4 pr-4 text-[14px] text-marfil/90">{fila.busto}</td>
+                    <td className="py-4 pr-4 text-[14px] text-marfil/90">{fila.cintura}</td>
+                    <td className="py-4 pr-4 text-[14px] text-marfil/90">{fila.cadera}</td>
+                    <td className="py-4 text-[14px] text-marfil/90">{fila.equivale}</td>
                   </tr>
                 ))}
               </tbody>
@@ -68,7 +68,7 @@ export default function SeccionTallas() {
           </div>
         </div>
 
-        <p className="mt-6 max-w-md text-[14px] text-marfil/75">
+        <p className="mt-6 max-w-md text-[14px] text-marfil/90">
           ¿Dudas con tu medida?{' '}
           <a
             href={urlWhatsApp}

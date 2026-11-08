@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-noche text-marfil font-sans font-light text-[17px] leading-[1.7];
+    @apply bg-noche text-marfil font-sans font-normal text-[17px] leading-[1.75] antialiased;
   }
 
   :focus-visible {

@@ -16,7 +16,8 @@ Cierre de venta por WhatsApp con mensaje precargado. No hay carrito ni pasarela.
 Están en tailwind.config.js y no se cambian sobre la marcha:
 noche #0C0609, vino #3B0A2A, granate #8E1E4F, rosa #E36A8B, piel #F3D9C6,
 marfil #F7F1EC. Display: Bodoni Moda. Cuerpo: Jost.
-Eyebrows: 11px, tracking .34em, uppercase, color rosa.
+Eyebrows: 12px, tracking .26em, uppercase, color rosa. Cuerpo en Jost 400
+(no 300) y textos secundarios con opacidad mínima de 75%, por legibilidad.
 
 ## Sistema de imágenes
 scripts/procesar-fotos.mjs lee de ./fotos-originales/, genera variantes de
@@ -58,6 +59,8 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
       3 juegos), sección Pijamas, fotos desde el CDN de Dropi (Imagen acepta
       URL https), 4 prendas viejas a Descontinuado, promesas corregidas
       (sin "+1.000 pedidos", sin cambio gratis 30 días, sin "empacamos en casa")
-- [ ] 9 · Bajar las fotos de Dropi a fotos-originales/ y pasarlas por npm run fotos
+- [x] 9 · Fotos por color en fotos-originales/ (<slug>-<color>.jpg), procesadas;
+      la ficha cambia de foto al elegir color (fotosPorColor en productos.ts).
+      Medianoche y Velo Blanco siguen con foto del CDN de Dropi.
 
 Actualiza esta lista al final de cada sesión.

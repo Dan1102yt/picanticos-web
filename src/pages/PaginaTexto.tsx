@@ -29,7 +29,7 @@ export default function PaginaTexto({ titulo, description, children }: PaginaTex
             {titulo}
           </h1>
           <div
-            className="mt-8 space-y-5 text-marfil/80"
+            className="mt-8 space-y-5 text-marfil/90"
             style={{ maxWidth: '68ch', lineHeight: 1.75 }}
           >
             {children}

@@ -23,8 +23,8 @@ export default function BandaDiscrecion() {
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-5 py-10 md:grid-cols-4">
         {ITEMS.map((item) => (
           <div key={item.titulo}>
-            <p className="text-[11px] uppercase tracking-[0.1em] text-piel">{item.titulo}</p>
-            <p className="mt-2 text-[13px] text-marfil/75">{item.descripcion}</p>
+            <p className="text-[12px] uppercase tracking-[0.1em] text-piel">{item.titulo}</p>
+            <p className="mt-2 text-[13px] text-marfil/90">{item.descripcion}</p>
           </div>
         ))}
       </div>

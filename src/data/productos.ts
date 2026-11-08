@@ -36,6 +36,9 @@ export interface Producto {
   // Recorte de la foto principal: acerca y centra la parte util de la foto
   // del proveedor (quita marcas de agua o paneles con la referencia).
   encuadre?: { escala: number; origen: string }
+  // Foto por color: al elegir un color en la ficha, la galería muestra esta
+  // foto. Los colores sin foto propia se quedan con la foto principal.
+  fotosPorColor?: Partial<Record<string, FotoProducto>>
   colores?: string[]
 }
 
@@ -61,8 +64,15 @@ export const productos: Producto[] = [
     material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2104579/1773197370WhatsApp%20Image%202026-02-02%20at%209.15.30%20AM.jpg',
+      'img/productos/noche-lenta-rojo',
+      'img/productos/noche-lenta-rosado',
+      'img/productos/noche-lenta-negro',
     ],
+    fotosPorColor: {
+      Rojo: 'img/productos/noche-lenta-rojo',
+      Rosado: 'img/productos/noche-lenta-rosado',
+      Negro: 'img/productos/noche-lenta-negro',
+    },
   },
 
   {
@@ -82,8 +92,15 @@ export const productos: Producto[] = [
     material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2104586/1773197929WhatsApp%20Image%202026-02-02%20at%209.14.01%20AM%20(2).jpg',
+      'img/productos/aurora-rojo',
+      'img/productos/aurora-negro',
+      'img/productos/aurora-rosado',
     ],
+    fotosPorColor: {
+      Rojo: 'img/productos/aurora-rojo',
+      Negro: 'img/productos/aurora-negro',
+      Rosado: 'img/productos/aurora-rosado',
+    },
   },
 
   {
@@ -103,8 +120,15 @@ export const productos: Producto[] = [
     material: 'Satín y encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2320828/img_6ae3a91385a6a1.59078768_0.jpg',
+      'img/productos/brisa-negra',
+      'img/productos/brisa-fucsia',
+      'img/productos/brisa-verde',
     ],
+    fotosPorColor: {
+      Negra: 'img/productos/brisa-negra',
+      Fucsia: 'img/productos/brisa-fucsia',
+      Verde: 'img/productos/brisa-verde',
+    },
   },
 
   {
@@ -147,8 +171,19 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1038537/1722628587l-xl%20(2).jpg',
+      'img/productos/liguero-vela-negro',
+      'img/productos/liguero-vela-rojo',
+      'img/productos/liguero-vela-blanco',
+      'img/productos/liguero-vela-azul',
+      'img/productos/liguero-vela-bordo',
     ],
+    fotosPorColor: {
+      Negro: 'img/productos/liguero-vela-negro',
+      Rojo: 'img/productos/liguero-vela-rojo',
+      Blanco: 'img/productos/liguero-vela-blanco',
+      Azul: 'img/productos/liguero-vela-azul',
+      'Bordó': 'img/productos/liguero-vela-bordo',
+    },
   },
 
   {
@@ -158,7 +193,7 @@ export const productos: Producto[] = [
     categoria: 'lenceria',
     tipo: 'Set de encaje con varilla',
     sensacion: 'Encaje con cuerpo',
-    colores: ['Negro', 'Rojo', 'Blanco', 'Azul', 'Turquí', 'Bordó'],
+    colores: ['Rojo', 'Negro', 'Blanco', 'Azul', 'Turquí', 'Bordó'],
     descripcionCorta:
       'Brasier de encaje con varilla y panty a juego, en seis colores.',
     descripcionLarga:
@@ -168,8 +203,19 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/814883/1714421674sm-l%20xl.jpg',
+      'img/productos/contorno-rojo',
+      'img/productos/contorno-blanco',
+      'img/productos/contorno-azul',
+      'img/productos/contorno-turqui',
+      'img/productos/contorno-bordo',
     ],
+    fotosPorColor: {
+      Rojo: 'img/productos/contorno-rojo',
+      Blanco: 'img/productos/contorno-blanco',
+      Azul: 'img/productos/contorno-azul',
+      'Turquí': 'img/productos/contorno-turqui',
+      'Bordó': 'img/productos/contorno-bordo',
+    },
   },
 
   {
@@ -200,6 +246,7 @@ export const productos: Producto[] = [
     categoria: 'lenceria',
     tipo: 'Body',
     sensacion: 'Se ajusta al cuerpo',
+    colores: ['Negro', 'Rojo'],
     descripcionCorta:
       'Body de una pieza que se ajusta al cuerpo. Solo o debajo de una chaqueta.',
     descripcionLarga:
@@ -209,8 +256,13 @@ export const productos: Producto[] = [
     material: 'Tela elástica (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2012790/1064cdd8-e780-454e-9689-3e8e5e065016.jpg',
+      'img/productos/segunda-piel-negro',
+      'img/productos/segunda-piel-rojo',
     ],
+    fotosPorColor: {
+      Negro: 'img/productos/segunda-piel-negro',
+      Rojo: 'img/productos/segunda-piel-rojo',
+    },
   },
 
   {
@@ -231,6 +283,7 @@ export const productos: Producto[] = [
     imagenes: [
       'img/productos/torre-pasion-1',
       'img/productos/torre-pasion-2',
+      'img/productos/torre-pasion-3',
     ],
   },
 
@@ -250,7 +303,8 @@ export const productos: Producto[] = [
     material: 'Bloques de madera y cartas impresas.',
     cuidado: 'Mantener en lugar seco. Limpiar con paño seco.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2153606/1779117611Dise%C3%B1o%20sin%20t%C3%ADtulo7.png',
+      'img/productos/noche-completa-1',
+      'img/productos/noche-completa-2',
     ],
   },
 
@@ -270,7 +324,7 @@ export const productos: Producto[] = [
     material: 'Tablero impreso.',
     cuidado: 'Mantener en lugar seco.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1948361/1759443056Juegos%20eroticos%20(13).png',
+      'img/productos/parques-de-dos-1',
     ],
   },
 ]

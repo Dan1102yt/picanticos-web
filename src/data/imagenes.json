@@ -24,6 +24,92 @@
     "w": 768,
     "h": 1063
   },
+  "img/productos/aurora-negro": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 960,
+    "h": 1280
+  },
+  "img/productos/aurora-rojo": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 960,
+    "h": 1280
+  },
+  "img/productos/aurora-rosado": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 854,
+    "h": 1280
+  },
+  "img/productos/brisa-fucsia": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 961,
+    "h": 1280
+  },
+  "img/productos/brisa-negra": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 961,
+    "h": 1280
+  },
+  "img/productos/brisa-verde": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 960,
+    "h": 1280
+  },
+  "img/productos/contorno-azul": {
+    "widths": [
+      480,
+      768,
+      1440
+    ],
+    "w": 1600,
+    "h": 1600
+  },
+  "img/productos/contorno-blanco": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 782,
+    "h": 1600
+  },
+  "img/productos/contorno-bordo": {
+    "widths": [
+      480
+    ],
+    "w": 732,
+    "h": 1600
+  },
+  "img/productos/contorno-rojo": {
+    "widths": [
+      480
+    ],
+    "w": 738,
+    "h": 1600
+  },
+  "img/productos/contorno-turqui": {
+    "widths": [
+      480
+    ],
+    "w": 734,
+    "h": 1600
+  },
   "img/productos/fuego-nocturno-1": {
     "widths": [
       480,
@@ -48,6 +134,43 @@
     "w": 934,
     "h": 2160
   },
+  "img/productos/liguero-vela-azul": {
+    "widths": [
+      480
+    ],
+    "w": 540,
+    "h": 1024
+  },
+  "img/productos/liguero-vela-blanco": {
+    "widths": [
+      480
+    ],
+    "w": 738,
+    "h": 1600
+  },
+  "img/productos/liguero-vela-bordo": {
+    "widths": [
+      480,
+      768,
+      1440
+    ],
+    "w": 1600,
+    "h": 1600
+  },
+  "img/productos/liguero-vela-negro": {
+    "widths": [
+      480
+    ],
+    "w": 738,
+    "h": 1600
+  },
+  "img/productos/liguero-vela-rojo": {
+    "widths": [
+      480
+    ],
+    "w": 738,
+    "h": 1600
+  },
   "img/productos/luna-traviesa-1": {
     "widths": [
       480
@@ -70,6 +193,53 @@
     ],
     "w": 810,
     "h": 2160
+  },
+  "img/productos/noche-completa-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "img/productos/noche-completa-2": {
+    "widths": [
+      480
+    ],
+    "w": 500,
+    "h": 500
+  },
+  "img/productos/noche-lenta-negro": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 843,
+    "h": 1280
+  },
+  "img/productos/noche-lenta-rojo": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 934,
+    "h": 1280
+  },
+  "img/productos/noche-lenta-rosado": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 960,
+    "h": 1280
+  },
+  "img/productos/parques-de-dos-1": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1000,
+    "h": 1000
   },
   "img/productos/pecado-unico-1": {
     "widths": [
@@ -111,6 +281,22 @@
     "w": 996,
     "h": 2160
   },
+  "img/productos/segunda-piel-negro": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1080,
+    "h": 1080
+  },
+  "img/productos/segunda-piel-rojo": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 1080,
+    "h": 1080
+  },
   "img/productos/torre-pasion-1": {
     "widths": [
       480,
@@ -126,5 +312,12 @@
     ],
     "w": 900,
     "h": 1600
+  },
+  "img/productos/torre-pasion-3": {
+    "widths": [
+      480
+    ],
+    "w": 679,
+    "h": 679
   }
 }

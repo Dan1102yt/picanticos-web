@@ -23,7 +23,7 @@ const REDES = [
   { label: 'WhatsApp', href: urlWhatsApp },
 ]
 
-const TITULO_COL = 'text-[11px] uppercase tracking-[0.2em] text-piel'
+const TITULO_COL = 'text-[12px] uppercase tracking-[0.2em] text-piel'
 
 export default function Footer() {
   return (
@@ -40,7 +40,7 @@ export default function Footer() {
               className="h-10 w-auto"
             />
           </Link>
-          <p className="mt-4 max-w-[26ch] text-[13px] text-marfil/75">
+          <p className="mt-4 max-w-[26ch] text-[13px] text-marfil/90">
             Pijamas, lencería y juegos para parejas. Tienda colombiana desde 2024.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   to={item.href}
-                  className="text-[13px] text-marfil/80 transition-colors hover:text-piel"
+                  className="text-[13px] text-marfil/90 transition-colors hover:text-piel"
                 >
                   {item.label}
                 </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   to={item.href}
-                  className="text-[13px] text-marfil/80 transition-colors hover:text-piel"
+                  className="text-[13px] text-marfil/90 transition-colors hover:text-piel"
                 >
                   {item.label}
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-marfil/80 transition-colors hover:text-piel"
+                  className="text-[13px] text-marfil/90 transition-colors hover:text-piel"
                 >
                   {item.label}
                 </a>
@@ -96,8 +96,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="mx-auto mt-12 max-w-6xl text-[12px] text-marfil/55">
-        © 2026 Picanticos · Bogotá, Colombia
+      <p className="mx-auto mt-12 max-w-6xl text-[12px] text-marfil/75">
+        © 2026 Picanticos · Bogotá, Colombia ·{' '}
+        <a
+          href="mailto:picanticosshop@gmail.com"
+          className="underline-offset-2 transition-colors hover:text-piel hover:underline"
+        >
+          picanticosshop@gmail.com
+        </a>
       </p>
     </footer>
   )

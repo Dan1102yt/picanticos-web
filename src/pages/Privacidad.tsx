@@ -19,10 +19,10 @@ export default function Privacidad() {
         En cualquier momento puedes pedirnos que eliminemos tus datos
         escribiéndonos a{' '}
         <a
-          href="mailto:davidroa1102@gmail.com"
+          href="mailto:picanticosshop@gmail.com"
           className="text-rosa underline underline-offset-2"
         >
-          davidroa1102@gmail.com
+          picanticosshop@gmail.com
         </a>
         .
       </p>

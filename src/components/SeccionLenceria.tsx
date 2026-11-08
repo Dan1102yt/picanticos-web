@@ -6,7 +6,7 @@ export default function SeccionLenceria() {
   return (
     <section id="lenceria" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
           Colección
         </p>
         <h2
@@ -15,7 +15,7 @@ export default function SeccionLenceria() {
         >
           Para <span className="italic text-rosa">ti</span>
         </h2>
-        <p className="mt-5 max-w-md text-marfil/80">
+        <p className="mt-5 max-w-md text-marfil/90">
           Cada pieza dice cómo se siente antes de decir cuánto cuesta. Elige
           por la sensación.
         </p>

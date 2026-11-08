@@ -29,7 +29,7 @@ export default function Hero() {
         <div>
           <motion.p
             variants={item}
-            className="text-[11px] uppercase tracking-[0.34em] text-rosa"
+            className="text-[12px] uppercase tracking-[0.26em] text-rosa"
           >
             Pijamas, lencería y juegos · Colombia
           </motion.p>
@@ -44,7 +44,7 @@ export default function Hero() {
             <span className="block italic text-piel">que para ti.</span>
           </motion.h1>
 
-          <motion.p variants={item} className="mt-6 max-w-md text-marfil/80">
+          <motion.p variants={item} className="mt-6 max-w-md text-marfil/90">
             Piezas pensadas para tu cuerpo, no para la mirada de nadie más. Empaque
             discreto, pago contraentrega y envíos a todo el país.
           </motion.p>

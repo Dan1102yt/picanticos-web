@@ -6,7 +6,7 @@ export default function SeccionPijamas() {
   return (
     <section id="pijamas" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[11px] uppercase tracking-[0.34em] text-rosa">
+        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
           Pijamas
         </p>
         <h2
@@ -15,7 +15,7 @@ export default function SeccionPijamas() {
         >
           Para <span className="italic text-rosa">dormir</span> bonito
         </h2>
-        <p className="mt-5 max-w-md text-marfil/80">
+        <p className="mt-5 max-w-md text-marfil/90">
           Satín liviano para las noches tranquilas y las mañanas lentas. Talla
           única o por talla, en varios colores.
         </p>

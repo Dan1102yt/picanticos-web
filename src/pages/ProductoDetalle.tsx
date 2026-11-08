@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState, type ReactNode, useRef } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
@@ -45,12 +45,45 @@ function FichaProducto({ producto }: { producto: Producto }) {
   const [colorSeleccionado, setColorSeleccionado] = useState(producto.colores?.[0])
   const [tallaSeleccionada, setTallaSeleccionada] = useState<string | undefined>(undefined)
   const [seccionAbierta, setSeccionAbierta] = useState<SeccionId | null>(null)
+  const galeriaRef = useRef<HTMLDivElement>(null)
 
   const urlWhatsApp = useWhatsApp({
     producto,
     talla: tallaSeleccionada,
     color: colorSeleccionado,
   })
+
+  const fotoDelColor = colorSeleccionado
+    ? producto.fotosPorColor?.[colorSeleccionado]
+    : undefined
+  const imagenes =
+    fotoDelColor && !producto.imagenes.includes(fotoDelColor)
+      ? [fotoDelColor, ...producto.imagenes]
+      : producto.imagenes
+  const usaEncuadre = imagenes[indiceActivo] === producto.imagenes[0]
+
+  // Elegir un color muestra su foto; tocar la miniatura de un color lo
+  // selecciona, para que foto y color nunca queden desincronizados.
+  const elegirColor = (color: string) => {
+    setColorSeleccionado(color)
+    const foto = producto.fotosPorColor?.[color]
+    if (!foto) return
+    const indice = imagenes.indexOf(foto)
+    setIndiceActivo(indice >= 0 ? indice : 0)
+    // En celular la foto queda arriba, fuera de vista: subir hasta ella.
+    const galeria = galeriaRef.current
+    if (galeria && galeria.getBoundingClientRect().bottom < 80) {
+      galeria.scrollIntoView({ behavior: reducirMovimiento ? 'auto' : 'smooth', block: 'start' })
+    }
+  }
+
+  const elegirFoto = (indice: number) => {
+    setIndiceActivo(indice)
+    const color = Object.entries(producto.fotosPorColor ?? {}).find(
+      ([, foto]) => foto === imagenes[indice]
+    )?.[0]
+    if (color) setColorSeleccionado(color)
+  }
 
   const necesitaTalla = producto.tallas.length > 1
   const faltaTalla = necesitaTalla && !tallaSeleccionada
@@ -99,10 +132,13 @@ function FichaProducto({ producto }: { producto: Producto }) {
         <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-[55%_45%] md:gap-[56px]">
           {/* Galería */}
           <div>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[14px]">
+            <div
+              ref={galeriaRef}
+              className="relative aspect-[3/4] scroll-mt-[90px] overflow-hidden rounded-[14px]"
+            >
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={indiceActivo}
+                  key={imagenes[indiceActivo]}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -110,23 +146,25 @@ function FichaProducto({ producto }: { producto: Producto }) {
                   className="absolute inset-0"
                 >
                   <Imagen
-                    base={producto.imagenes[indiceActivo]}
-                    alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
+                    base={imagenes[indiceActivo]}
+                    alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}${
+                      fotoDelColor ? `, color ${colorSeleccionado?.toLowerCase()}` : ''
+                    }`}
                     className="h-full w-full object-cover"
-                    encuadre={indiceActivo === 0 ? producto.encuadre : undefined}
+                    encuadre={usaEncuadre ? producto.encuadre : undefined}
                   />
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {producto.imagenes.length > 1 && (
+            {imagenes.length > 1 && (
               <div className="mt-[10px] flex gap-[10px]">
-                {producto.imagenes.map((img, i) => (
+                {imagenes.map((img, i) => (
                   <button
                     key={img}
                     type="button"
                     aria-label={`Ver foto ${i + 1} de ${producto.nombre}`}
-                    onClick={() => setIndiceActivo(i)}
+                    onClick={() => elegirFoto(i)}
                     className={`aspect-square w-20 overflow-hidden rounded-md border-2 transition-opacity ${
                       i === indiceActivo
                         ? 'border-rosa'
@@ -146,7 +184,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
 
           {/* Información */}
           <div className="md:sticky md:top-24 md:self-start">
-            <nav aria-label="breadcrumb" className="text-[12px] opacity-55">
+            <nav aria-label="breadcrumb" className="text-[12px] opacity-75">
               <Link to="/" className="hover:text-piel">
                 Inicio
               </Link>
@@ -161,7 +199,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
               <span>{producto.nombre}</span>
             </nav>
 
-            <p className="mt-5 text-[11px] uppercase tracking-[0.18em] opacity-50">
+            <p className="mt-5 text-[12px] uppercase tracking-[0.18em] opacity-75">
               {producto.tipo}
             </p>
             <h1 className="mt-1 font-display text-[42px] leading-none">
@@ -171,19 +209,19 @@ function FichaProducto({ producto }: { producto: Producto }) {
               {formatearPrecio(producto.precio)}
             </p>
 
-            <span className="mt-4 inline-block rounded-full border border-[rgba(243,217,198,0.18)] bg-noche/70 px-3.5 py-1.5 text-[11px] text-piel backdrop-blur-sm">
+            <span className="mt-4 inline-block rounded-full border border-[rgba(243,217,198,0.18)] bg-noche/70 px-3.5 py-1.5 text-[12px] text-piel backdrop-blur-sm">
               {producto.sensacion}
             </span>
 
-            <p className="mt-6 text-[17px] opacity-80">{producto.descripcionLarga}</p>
+            <p className="mt-6 text-[17px] opacity-90">{producto.descripcionLarga}</p>
 
             <div className="mt-8">
-              <h2 className="text-[11px] uppercase tracking-[0.18em] opacity-50">
+              <h2 className="text-[12px] uppercase tracking-[0.18em] opacity-75">
                 Qué incluye
               </h2>
               <ul className="mt-3 list-none space-y-1.5">
                 {producto.incluye.map((item) => (
-                  <li key={item} className="text-[15px] opacity-80">
+                  <li key={item} className="text-[15px] opacity-90">
                     <span className="mr-2 text-rosa">–</span>
                     {item}
                   </li>
@@ -193,7 +231,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
 
             {producto.colores && (
               <div className="mt-8">
-                <h2 className="text-[11px] uppercase tracking-[0.18em] opacity-50">
+                <h2 className="text-[12px] uppercase tracking-[0.18em] opacity-75">
                   Color
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -202,11 +240,11 @@ function FichaProducto({ producto }: { producto: Producto }) {
                       key={color}
                       type="button"
                       aria-pressed={colorSeleccionado === color}
-                      onClick={() => setColorSeleccionado(color)}
+                      onClick={() => elegirColor(color)}
                       className={`rounded-full border px-4 py-2 text-[12px] uppercase tracking-[0.1em] transition-colors ${
                         colorSeleccionado === color
                           ? 'border-piel bg-piel text-noche'
-                          : 'border-[rgba(243,217,198,0.18)] text-marfil/80 hover:border-piel'
+                          : 'border-[rgba(243,217,198,0.18)] text-marfil/90 hover:border-piel'
                       }`}
                     >
                       {color}
@@ -218,7 +256,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
 
             {producto.tallas.length > 1 ? (
               <div className="mt-8">
-                <h2 className="text-[11px] uppercase tracking-[0.18em] opacity-50">
+                <h2 className="text-[12px] uppercase tracking-[0.18em] opacity-75">
                   Talla
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -231,7 +269,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                       className={`rounded-full border px-4 py-2 text-[12px] uppercase tracking-[0.1em] transition-colors ${
                         tallaSeleccionada === talla
                           ? 'border-piel bg-piel text-noche'
-                          : 'border-[rgba(243,217,198,0.18)] text-marfil/80 hover:border-piel'
+                          : 'border-[rgba(243,217,198,0.18)] text-marfil/90 hover:border-piel'
                       }`}
                     >
                       {talla}
@@ -247,7 +285,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
               </div>
             ) : producto.tallas.length === 1 ? (
               <p className="mt-8 text-[13px] opacity-70">
-                <span className="uppercase tracking-[0.1em] opacity-50">Talla: </span>
+                <span className="uppercase tracking-[0.1em] opacity-75">Talla: </span>
                 {producto.tallas[0]}
               </p>
             ) : null}
@@ -343,7 +381,7 @@ function SeccionAcordeon({ titulo, abierto, onToggle, children }: SeccionAcordeo
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pb-5 text-[14px] opacity-75">{children}</div>
+            <div className="pb-5 text-[14px] opacity-90">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -23,6 +23,17 @@ const PRODUCT_KEYS = [
   'pecado-unico',
   'torre-pasion',
   'fuego-nocturno',
+  // Catálogo Dropi (nov-2026). Nombre de archivo: <slug>-<color>.jpg o <slug>-1.jpg
+  'noche-lenta',
+  'aurora',
+  'brisa',
+  'medianoche',
+  'liguero-vela',
+  'contorno',
+  'velo-blanco',
+  'segunda-piel',
+  'noche-completa',
+  'parques-de-dos',
 ];
 const SITE_KEYS = ['hero', 'nosotros', 'empaque'];
 const TARGET_WIDTHS = [480, 768, 1440];
