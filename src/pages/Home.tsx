@@ -2,15 +2,16 @@ import { Helmet } from 'react-helmet-async'
 import { SITE_URL, redes } from '../data/productos'
 import Hero from '../components/Hero'
 import BandaDiscrecion from '../components/BandaDiscrecion'
+import SeccionPijamas from '../components/SeccionPijamas'
 import SeccionLenceria from '../components/SeccionLenceria'
 import SeccionJuegos from '../components/SeccionJuegos'
 import SeccionNosotros from '../components/SeccionNosotros'
 import SeccionTallas from '../components/SeccionTallas'
 import SeccionCierre from '../components/SeccionCierre'
 
-const TITULO = 'Picanticos · Lencería y juegos para adultos en Colombia'
+const TITULO = 'Picanticos · Pijamas, lencería y juegos para parejas en Colombia'
 const DESCRIPCION =
-  'Lencería y juegos de mesa para adultos con envío discreto a toda Colombia. Empaque sin marca y cambio de talla gratis en 30 días.'
+  'Pijamas de satín, lencería y juegos de mesa para parejas con envío discreto a toda Colombia. Empaque sin marca y pago contraentrega.'
 const OG_IMAGE = `${SITE_URL}/img/hero-768.jpg`
 
 const jsonLd = {
@@ -38,6 +39,7 @@ export default function Home() {
 
       <Hero />
       <BandaDiscrecion />
+      <SeccionPijamas />
       <SeccionLenceria />
       <SeccionJuegos />
       {/* TODO: faltan testimonios reales de clientas */}

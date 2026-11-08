@@ -8,7 +8,7 @@ export default function Cambios() {
   return (
     <PaginaTexto
       titulo="Cambios y devoluciones"
-      description="Tienes 30 días para cambiar la talla de tu pedido de Picanticos. Así se pide."
+      description="Cómo cambiar la talla de tu pedido de Picanticos."
     >
       <p>{envio.cambios}</p>
       <p>

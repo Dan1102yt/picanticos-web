@@ -4,16 +4,16 @@ const ITEMS = [
     descripcion: 'Caja sin marca ni descripción del contenido.',
   },
   {
-    titulo: 'Remitente discreto',
-    descripcion: 'En la guía solo aparecen la fecha y tu nombre.',
+    titulo: 'Pagas al recibir',
+    descripcion: 'Contraentrega: pagas cuando lo tengas en la mano.',
   },
   {
-    titulo: 'Cambio de talla gratis',
-    descripcion: '30 días, sin preguntas incómodas.',
+    titulo: 'Asesoría de talla',
+    descripcion: 'Por WhatsApp, antes de pedir y sin compromiso.',
   },
   {
     titulo: 'Envíos a todo el país',
-    descripcion: 'Contraentrega disponible en todas las ciudades.',
+    descripcion: 'Despacho en 1 a 2 días hábiles.',
   },
 ]
 

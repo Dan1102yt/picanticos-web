@@ -12,12 +12,15 @@ const Privacidad = lazy(() => import('./pages/Privacidad'))
 const Descontinuado = lazy(() => import('./pages/Descontinuado'))
 
 // Slugs vivos en la bio de Instagram y TikTok desde el sitio anterior.
-const SLUGS_ANTIGUOS = [
+const SLUGS_ANTIGUOS = ['torre-pasion']
+
+// Piezas que salieron del catalogo al pasar a dropshipping (nov-2026).
+const SLUGS_DESCONTINUADOS = [
+  'kimono-malla',
   'satin-glow',
   'fuego-nocturno',
   'luna-traviesa',
   'pecado-unico',
-  'torre-pasion',
 ]
 
 function CargandoRuta() {
@@ -36,8 +39,14 @@ export default function App() {
           <Route path="/envios" element={<Envios />} />
           <Route path="/cambios" element={<Cambios />} />
           <Route path="/privacidad" element={<Privacidad />} />
-          <Route path="/kimono-malla" element={<Descontinuado />} />
-          <Route path="/producto/kimono-malla" element={<Descontinuado />} />
+          {SLUGS_DESCONTINUADOS.flatMap((slug) => [
+            <Route key={slug} path={`/${slug}`} element={<Descontinuado />} />,
+            <Route
+              key={`producto-${slug}`}
+              path={`/producto/${slug}`}
+              element={<Descontinuado />}
+            />,
+          ])}
           {SLUGS_ANTIGUOS.map((slug) => (
             <Route
               key={slug}

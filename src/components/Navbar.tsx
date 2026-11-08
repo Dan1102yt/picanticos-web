@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const LINKS = [
+  { href: '#pijamas', label: 'Pijamas' },
   { href: '#lenceria', label: 'Para ti' },
   { href: '#juegos', label: 'Para los dos' },
   { href: '#tallas', label: 'Tallas' },

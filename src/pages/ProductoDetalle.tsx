@@ -11,6 +11,7 @@ import {
   type Producto,
 } from '../data/productos'
 import Imagen from '../components/Imagen'
+import { esUrlExterna } from '../data/claves'
 import ProductoCard from '../components/ProductoCard'
 import { useWhatsApp } from '../hooks/useWhatsApp'
 
@@ -26,10 +27,12 @@ export default function ProductoDetalle() {
 }
 
 const CATEGORIA_LABEL: Record<Producto['categoria'], string> = {
+  pijama: 'Pijamas',
   lenceria: 'Lencería',
   juego: 'Juegos',
 }
 const CATEGORIA_ANCLA: Record<Producto['categoria'], string> = {
+  pijama: 'pijamas',
   lenceria: 'lenceria',
   juego: 'juegos',
 }
@@ -54,7 +57,9 @@ function FichaProducto({ producto }: { producto: Producto }) {
   const sugeridos = relacionados(producto.slug)
 
   const titulo = `${producto.nombre} · ${producto.tipo} | Picanticos`
-  const ogImage = `${SITE_URL}/${producto.imagenes[0]}-768.jpg`
+  const ogImage = esUrlExterna(producto.imagenes[0])
+    ? producto.imagenes[0]
+    : `${SITE_URL}/${producto.imagenes[0]}-768.jpg`
   const canonical = `${SITE_URL}/producto/${producto.slug}`
 
   const jsonLd = {

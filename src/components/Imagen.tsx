@@ -1,8 +1,8 @@
 import manifiesto from '../data/imagenes.json'
-import type { ClaveImagen } from '../data/claves'
+import { esUrlExterna, type FotoProducto } from '../data/claves'
 
 interface ImagenProps {
-  base: ClaveImagen
+  base: FotoProducto
   alt: string
   priority?: boolean
   className?: string
@@ -11,6 +11,20 @@ interface ImagenProps {
 const SIZES = '(min-width: 1024px) 50vw, 100vw'
 
 export default function Imagen({ base, alt, priority = false, className }: ImagenProps) {
+  if (esUrlExterna(base)) {
+    return (
+      <img
+        src={base}
+        alt={alt}
+        className={className}
+        referrerPolicy="no-referrer"
+        {...(priority
+          ? { fetchPriority: 'high' as const }
+          : { loading: 'lazy' as const, decoding: 'async' as const })}
+      />
+    )
+  }
+
   const entrada = manifiesto[base]
 
   if (!entrada) {

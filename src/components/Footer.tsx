@@ -5,6 +5,7 @@ const mensaje = encodeURIComponent('Hola Picanticos 💫')
 const urlWhatsApp = `https://api.whatsapp.com/send?phone=${whatsapp}&text=${mensaje}`
 
 const TIENDA = [
+  { label: 'Pijamas', href: '/#pijamas' },
   { label: 'Lencería', href: '/#lenceria' },
   { label: 'Juegos', href: '/#juegos' },
   { label: 'Tallas', href: '/#tallas' },
@@ -40,7 +41,7 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-[26ch] text-[13px] text-marfil/75">
-            Lencería y juegos para adultos. Hecho en Colombia desde 2024.
+            Pijamas, lencería y juegos para parejas. Tienda colombiana desde 2024.
           </p>
         </div>
 

@@ -1,8 +1,8 @@
 import Imagen from './Imagen'
 
 const METRICAS = [
-  { numero: '+1.000', etiqueta: 'Pedidos enviados' },
-  { numero: '30 días', etiqueta: 'Para cambiar la talla' },
+  { numero: 'Contraentrega', etiqueta: 'En todo el país' },
+  { numero: 'Caja neutra', etiqueta: 'En cada pedido' },
 ]
 
 export default function SeccionNosotros() {
@@ -18,7 +18,7 @@ export default function SeccionNosotros() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-[70px] md:grid-cols-2">
         <Imagen
           base="img/nosotros"
-          alt="El equipo de Picanticos empacando un pedido"
+          alt="Un pedido de Picanticos en su caja neutra"
           className="aspect-[4/5] w-full rounded-[12px] object-cover"
         />
 
@@ -35,9 +35,9 @@ export default function SeccionNosotros() {
             <span className="text-rosa">Vendemos para que te guste verte.</span>
           </blockquote>
           <p className="mt-6 max-w-md text-marfil/80">
-            Somos una tienda colombiana pequeña. Elegimos las telas a mano,
-            empacamos cada pedido en casa y respondemos por WhatsApp nosotros
-            mismos — no un bot. Si algo no te queda, lo cambiamos y ya.
+            Somos una tienda colombiana pequeña. Elegimos cada pieza con
+            proveedores nacionales, la enviamos en caja neutra y respondemos
+            por WhatsApp nosotros mismos — no un bot.
           </p>
 
           <div className="mt-10 flex gap-12">

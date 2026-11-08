@@ -54,5 +54,10 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - [x] 7 · Kimono Sensual (kimono-malla) descontinuado: fuera de productos.ts,
       /kimono-malla y /producto/kimono-malla ahora muestran
       src/pages/Descontinuado.tsx
+- [x] 8 · Dropshipping con Dropi: catálogo nuevo (3 pijamas, 5 lencería,
+      3 juegos), sección Pijamas, fotos desde el CDN de Dropi (Imagen acepta
+      URL https), 4 prendas viejas a Descontinuado, promesas corregidas
+      (sin "+1.000 pedidos", sin cambio gratis 30 días, sin "empacamos en casa")
+- [ ] 9 · Bajar las fotos de Dropi a fotos-originales/ y pasarlas por npm run fotos
 
 Actualiza esta lista al final de cada sesión.

@@ -3,15 +3,21 @@
 // Los slugs son los mismos del sitio actual: no cambiarlos, hay links vivos
 // en la bio de Instagram y TikTok apuntando ahi.
 //
+// DROPSHIPPING: desde nov-2026 todo el catalogo sale de proveedores en Dropi.
+// Las fotos de los productos nuevos vienen del CDN de Dropi; cuando esten
+// descargadas en fotos-originales/ y procesadas, reemplazar la URL por la clave.
+// Satin Glow, Fuego Nocturno, Luna Traviesa y Pecado Unico salieron del
+// catalogo: sus slugs muestran Descontinuado.tsx.
+//
 // NOTA SOBRE MATERIALES: las composiciones de abajo son las estandar de la
 // industria para cada tipo de tela, puestas como provisionales. Reemplazalas
 // con lo que digan las etiquetas reales antes de publicar: en Colombia el
 // etiquetado de composicion textil es obligatorio y una clienta puede reclamar
 // si no coincide.
 
-import type { ClaveImagen } from './claves'
+import type { FotoProducto } from './claves'
 
-export type Categoria = 'lenceria' | 'juego'
+export type Categoria = 'pijama' | 'lenceria' | 'juego'
 
 export interface Producto {
   slug: string
@@ -26,7 +32,7 @@ export interface Producto {
   tallas: string[]
   material: string
   cuidado: string
-  imagenes: ClaveImagen[]
+  imagenes: FotoProducto[]
   colores?: string[]
 }
 
@@ -36,104 +42,175 @@ export interface Producto {
 
 export const productos: Producto[] = [
   {
-    slug: 'satin-glow',
-    nombre: 'Satín Glow',
-    precio: 72000,
-    categoria: 'lenceria',
-    tipo: 'Set de encaje · 2 piezas',
-    sensacion: 'Satín frío al tacto',
+    slug: 'noche-lenta',
+    nombre: 'Noche Lenta',
+    precio: 69900,
+    categoria: 'pijama',
+    tipo: 'Pijama de satín · short',
+    sensacion: 'Satín fresco',
+    colores: ['Rojo', 'Rosado', 'Blanco', 'Negro', 'Vinotinto'],
     descripcionCorta:
-      'Encaje elástico con tira cruzada en la espalda. No marca bajo la ropa.',
+      'Top de tiras y short en satín con borde de encaje. Para dormir bien y verte mejor.',
     descripcionLarga:
-      'La pieza para el día en que no pasa nada especial y aun así quieres saber que la llevas puesta. El encaje cede donde tiene que ceder y sostiene donde importa, sin varillas que se claven. La tira cruzada de la espalda es el detalle que se ve cuando tú decides que se vea.',
-    incluye: ['Brasier de encaje', 'Panty a juego'],
-    tallas: ['S', 'M', 'L', 'XL'],
-    material:
-      'Encaje elástico: 90% poliamida, 10% elastano. Detalles y forros en satín.',
-    cuidado:
-      'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
+      'La pijama para las noches en que quieres algo que se sienta especial sin pensarlo mucho. Satín liviano que no da calor, top de tiras y un short cómodo con borde de encaje.',
+    incluye: ['Top de tiras', 'Short'],
+    tallas: ['Talla única'],
+    material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
-      'img/productos/satin-glow-1',
-      'img/productos/satin-glow-2',
-      'img/productos/satin-glow-3',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2104579/1773197370WhatsApp%20Image%202026-02-02%20at%209.15.30%20AM.jpg',
     ],
   },
 
   {
-    slug: 'fuego-nocturno',
-    nombre: 'Fuego Nocturno',
-    precio: 64000,
-    categoria: 'lenceria',
-    tipo: 'Set de encaje · 3 colores',
-    sensacion: 'Encaje con cuerpo',
-    colores: ['Blanco', 'Negro', 'Rojo'],
+    slug: 'aurora',
+    nombre: 'Aurora',
+    precio: 69900,
+    categoria: 'pijama',
+    tipo: 'Camisón de satín',
+    sensacion: 'Cae suave',
+    colores: ['Rojo', 'Blanco', 'Negro', 'Rosado'],
     descripcionCorta:
-      'Set de encaje en blanco, negro o rojo. Tú eliges el tono de la noche.',
+      'Camisón corto de satín con borde de encaje. Se pone en un segundo y se ve como si te hubieras demorado.',
     descripcionLarga:
-      'El mismo corte en tres versiones, porque no todas las noches piden lo mismo: el blanco para lo que apenas empieza, el negro para lo que ya sabes, el rojo para cuando no hay nada que explicar. Encaje con buen cuerpo, que sostiene sin apretar y no se deforma después de la primera lavada.',
-    incluye: ['Brasier de encaje', 'Panty a juego'],
-    tallas: ['S', 'M', 'L', 'XL'],
-    material: 'Encaje elástico: 90% poliamida, 10% elastano.',
-    cuidado:
-      'Lavar a mano con agua fría y jabón suave. No usar secadora. Lavar los colores por separado la primera vez.',
+      'Un camisón corto de satín para la noche en que no quieres nada apretado. Tiras finas, borde de encaje en el escote y un satín que cae sin pegarse.',
+    incluye: ['Camisón de satín'],
+    tallas: ['Talla única'],
+    material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
-      'img/productos/fuego-nocturno-1',
-      'img/productos/fuego-nocturno-2',
-      'img/productos/fuego-nocturno-3',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2104586/1773197929WhatsApp%20Image%202026-02-02%20at%209.14.01%20AM%20(2).jpg',
     ],
   },
 
   {
-    slug: 'luna-traviesa',
-    nombre: 'Luna Traviesa',
-    precio: 60000,
+    slug: 'brisa',
+    nombre: 'Brisa',
+    precio: 59900,
+    categoria: 'pijama',
+    tipo: 'Top de encaje + short de satín',
+    sensacion: 'Liviana',
+    colores: ['Negra', 'Fucsia', 'Verde', 'Azul'],
+    descripcionCorta:
+      'Top de encaje y short de satín, en cuatro colores. Tu favorita de todos los días.',
+    descripcionLarga:
+      'La pijama que terminas usando todas las noches: top de encaje y short de satín liviano. Cuatro colores para elegir el tuyo o regalar el de alguien más.',
+    incluye: ['Top de encaje', 'Short de satín'],
+    tallas: ['Única', 'M', 'L'],
+    material: 'Satín y encaje (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2320828/img_6ae3a91385a6a1.59078768_0.jpg',
+    ],
+  },
+
+  {
+    slug: 'medianoche',
+    nombre: 'Medianoche',
+    precio: 89900,
     categoria: 'lenceria',
-    tipo: 'Babydoll + tanga',
+    tipo: 'Babydoll + panty',
     sensacion: 'Ligero, casi aire',
     descripcionCorta:
-      'Cae suelto desde el busto y se mueve contigo. Cómodo de verdad.',
+      'Babydoll abierto con lazo al frente y panty de encaje a juego.',
     descripcionLarga:
-      'Cae desde el busto y no vuelve a tocarte el cuerpo hasta que te mueves. Es la opción para las noches en que no quieres nada apretado y tampoco quieres renunciar a nada. Se pone en dos segundos y se ve como si te hubieras demorado.',
-    incluye: ['Babydoll', 'Tanga a juego'],
-    tallas: ['Talla única (S a L)'],
-    material:
-      'Satín: 95% poliéster, 5% elastano. Copas y bordes en encaje de poliamida.',
-    cuidado:
-      'Lavar a mano con agua fría. No planchar directamente sobre el satín. Secar a la sombra.',
+      'Una pieza para usar cuando tú decides que la noche es especial. Escríbenos por WhatsApp si quieres más fotos o ayuda con la talla antes de pedir.',
+    incluye: ['Babydoll', 'Panty de encaje'],
+    tallas: [],
+    material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'img/productos/luna-traviesa-1',
-      'img/productos/luna-traviesa-2',
-      'img/productos/luna-traviesa-3',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1318801/1728316312LC015.png',
     ],
   },
 
   {
-    slug: 'pecado-unico',
-    nombre: 'Pecado Único',
-    precio: 50000,
+    slug: 'liguero-vela',
+    nombre: 'Vela',
+    precio: 79900,
     categoria: 'lenceria',
-    tipo: 'Kimono + set interior',
-    sensacion: 'Peso que abraza',
+    tipo: 'Set con liguero y varilla',
+    sensacion: 'Realce con varilla',
+    colores: ['Negro', 'Rojo', 'Blanco', 'Azul', 'Bordó'],
     descripcionCorta:
-      'Kimono corto con cinturón y set en encaje. Funciona solo o encima.',
+      'Brasier con varilla, panty y liguero. El set completo.',
     descripcionLarga:
-      'El kimono tiene el peso justo para sentirse como algo que te pusiste a propósito, no como una bata. Corto, con cinturón que marca la cintura, y un set de encaje debajo. Es la pieza para la que te miras al espejo antes de que la vea alguien más — y esa mirada es la que cuenta.',
-    incluye: ['Kimono corto', 'Cinturón', 'Brasier de encaje', 'Panty'],
-    tallas: ['S', 'M', 'L'],
-    material:
-      'Kimono en satín: 95% poliéster, 5% elastano. Set interior en encaje elástico: 90% poliamida, 10% elastano.',
-    cuidado:
-      'Lavar a mano por separado con agua fría. No retorcer. Planchar el kimono a temperatura baja y por el revés.',
+      'El set para cuando quieres todo el ritual: brasier con varilla que realza, panty y liguero a juego. Cinco colores para elegir el tono de la noche.',
+    incluye: ['Brasier con varilla', 'Panty', 'Liguero'],
+    tallas: ['SM', 'LXL'],
+    material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'img/productos/pecado-unico-1',
-      'img/productos/pecado-unico-2',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1038537/1722628587l-xl%20(2).jpg',
+    ],
+  },
+
+  {
+    slug: 'contorno',
+    nombre: 'Contorno',
+    precio: 69900,
+    categoria: 'lenceria',
+    tipo: 'Set de encaje con varilla',
+    sensacion: 'Encaje con cuerpo',
+    colores: ['Negro', 'Rojo', 'Blanco', 'Azul', 'Turquí', 'Bordó'],
+    descripcionCorta:
+      'Brasier de encaje con varilla y panty a juego, en seis colores.',
+    descripcionLarga:
+      'Encaje que sostiene donde importa gracias a la varilla, con panty a juego. Seis colores para que no tengas que elegir solo uno.',
+    incluye: ['Brasier de encaje con varilla', 'Panty a juego'],
+    tallas: ['SM', 'LXL'],
+    material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/814883/1714421674sm-l%20xl.jpg',
+    ],
+  },
+
+  {
+    slug: 'velo-blanco',
+    nombre: 'Velo Blanco',
+    precio: 129900,
+    categoria: 'lenceria',
+    tipo: 'Conjunto blanco · novias',
+    sensacion: 'Para un día único',
+    colores: ['Blanco'],
+    descripcionCorta:
+      'Conjunto de lencería blanco para la noche de bodas o una fecha que merece algo especial.',
+    descripcionLarga:
+      'Pensado para la noche de bodas, la luna de miel o el aniversario. Blanco de principio a fin, para una fecha que solo pasa una vez.',
+    incluye: ['Conjunto de lencería blanco'],
+    tallas: ['S', 'M', 'L', 'XL'],
+    material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1673176/173963342513.jpg',
+    ],
+  },
+
+  {
+    slug: 'segunda-piel',
+    nombre: 'Segunda Piel',
+    precio: 54900,
+    categoria: 'lenceria',
+    tipo: 'Body',
+    sensacion: 'Se ajusta al cuerpo',
+    descripcionCorta:
+      'Body de una pieza que se ajusta al cuerpo. Solo o debajo de una chaqueta.',
+    descripcionLarga:
+      'Una sola pieza que se ajusta y no necesita nada más. Escríbenos por WhatsApp con tu medida y te decimos si es para ti.',
+    incluye: ['Body'],
+    tallas: [],
+    material: 'Tela elástica (composición exacta por confirmar con la etiqueta del proveedor).',
+    cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2012790/1064cdd8-e780-454e-9689-3e8e5e065016.jpg',
     ],
   },
 
   {
     slug: 'torre-pasion',
     nombre: 'Torre Pasión',
-    precio: 75000,
+    precio: 79900,
     categoria: 'juego',
     tipo: 'Juego de mesa · torre de 54 bloques',
     sensacion: '2 jugadores · 45 min',
@@ -150,8 +227,49 @@ export const productos: Producto[] = [
       'img/productos/torre-pasion-2',
     ],
   },
+
+  {
+    slug: 'noche-completa',
+    nombre: 'Noche Completa',
+    precio: 99900,
+    categoria: 'juego',
+    tipo: 'Combo · torre de 54 bloques + cartas UNOX',
+    sensacion: '2 juegos · 2 jugadores',
+    descripcionCorta:
+      'La torre de retos y las cartas UNOX en un solo pedido. Dos noches resueltas.',
+    descripcionLarga:
+      'Para empezar con risas y terminar donde ustedes decidan: la torre de 54 bloques con retos y las cartas UNOX para parejas, juntas en un solo envío.',
+    incluye: ['Torre de 54 bloques', 'Cartas UNOX para parejas'],
+    tallas: [],
+    material: 'Bloques de madera y cartas impresas.',
+    cuidado: 'Mantener en lugar seco. Limpiar con paño seco.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2153606/1779117611Dise%C3%B1o%20sin%20t%C3%ADtulo7.png',
+    ],
+  },
+
+  {
+    slug: 'parques-de-dos',
+    nombre: 'Parqués de Dos',
+    precio: 49900,
+    categoria: 'juego',
+    tipo: 'Juego de mesa · parqués para parejas',
+    sensacion: 'El clásico, con retos',
+    descripcionCorta:
+      'El parqués de siempre, con casillas de retos para dos.',
+    descripcionLarga:
+      'Las reglas que ya conocen, con casillas que cambian el juego. Ideal para una noche en casa sin plan.',
+    incluye: ['Juego de parqués para parejas'],
+    tallas: [],
+    material: 'Tablero impreso.',
+    cuidado: 'Mantener en lugar seco.',
+    imagenes: [
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1948361/1759443056Juegos%20eroticos%20(13).png',
+    ],
+  },
 ]
 
+export const pijamas = productos.filter((p) => p.categoria === 'pijama')
 export const lenceria = productos.filter((p) => p.categoria === 'lenceria')
 export const juegos = productos.filter((p) => p.categoria === 'juego')
 
@@ -170,17 +288,18 @@ export const formatearPrecio = (valor: number) =>
 
 // Datos de envio: se usan en el acordeon de cada ficha y en la pagina /envios
 export const envio = {
-  transportadora: 'Interrapidísimo',
+  transportadora:
+    'Interrapidísimo, Servientrega, Coordinadora o Envía, según tu ciudad',
   bogota: '3 días hábiles',
   nacional: '7 días hábiles',
   costo:
-    'El costo depende de tu ciudad y se cotiza al confirmar el pedido. Desde 3 productos, el envío va gratis.',
+    'El costo depende de tu ciudad y te lo confirmamos por WhatsApp antes de despachar.',
   contraentrega:
     'Disponible en todas las ciudades. Pagas cuando lo tengas en la mano.',
   discrecion:
-    'La caja va sin marca ni descripción del contenido. En la guía de Interrapidísimo solo aparecen la fecha y tu nombre.',
+    'La caja va sin marca ni descripción del contenido.',
   cambios:
-    'Tienes 30 días para cambiar la talla. Escríbenos por WhatsApp y coordinamos.',
+    'Si la talla no te queda, escríbenos por WhatsApp en los 5 días siguientes a recibir tu pedido y coordinamos el cambio. El envío de ida y vuelta del cambio corre por tu cuenta.',
 }
 
 export const whatsapp = '573054686226'
