@@ -17,7 +17,12 @@ export function useWhatsApp({ producto, talla, color }: PedidoWhatsApp) {
     lineas.push(`Talla: ${talla || 'por confirmar'}`)
   }
 
-  lineas.push(`Precio: ${formatearPrecio(producto.precio)}`)
+  lineas.push(`Precio: ${formatearPrecio(producto.precio)} (pago contraentrega)`)
+  lineas.push('')
+  lineas.push('Mis datos para el envío:')
+  lineas.push('Nombre:')
+  lineas.push('Ciudad:')
+  lineas.push('Dirección:')
   lineas.push('')
   lineas.push(`${SITE_URL}/producto/${producto.slug}`)
 

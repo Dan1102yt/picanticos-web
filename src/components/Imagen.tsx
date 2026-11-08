@@ -6,17 +6,29 @@ interface ImagenProps {
   alt: string
   priority?: boolean
   className?: string
+  encuadre?: { escala: number; origen: string }
 }
 
 const SIZES = '(min-width: 1024px) 50vw, 100vw'
 
-export default function Imagen({ base, alt, priority = false, className }: ImagenProps) {
+export default function Imagen({
+  base,
+  alt,
+  priority = false,
+  className,
+  encuadre,
+}: ImagenProps) {
+  const estilo = encuadre
+    ? { transform: `scale(${encuadre.escala})`, transformOrigin: encuadre.origen }
+    : undefined
+
   if (esUrlExterna(base)) {
     return (
       <img
         src={base}
         alt={alt}
         className={className}
+        style={estilo}
         referrerPolicy="no-referrer"
         {...(priority
           ? { fetchPriority: 'high' as const }

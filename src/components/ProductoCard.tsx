@@ -13,11 +13,12 @@ export default function ProductoCard({ producto }: ProductoCardProps) {
       to={`/producto/${producto.slug}`}
       className="group block overflow-hidden rounded-[14px] border border-[rgba(243,217,198,0.18)] bg-white/[0.02] transition-all duration-[400ms] hover:-translate-y-1.5 hover:border-[rgba(227,106,139,0.5)]"
     >
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <Imagen
           base={producto.imagenes[0]}
           alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
           className="aspect-[3/4] w-full object-cover"
+          encuadre={producto.encuadre}
         />
         <span className="absolute left-3.5 top-3.5 rounded-full border border-[rgba(243,217,198,0.18)] bg-noche/70 px-3.5 py-1.5 text-[11px] text-piel backdrop-blur-sm">
           {producto.sensacion}

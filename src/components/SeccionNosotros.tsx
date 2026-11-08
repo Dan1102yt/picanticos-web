@@ -18,7 +18,7 @@ export default function SeccionNosotros() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-[70px] md:grid-cols-2">
         <Imagen
           base="img/nosotros"
-          alt="Un pedido de Picanticos en su caja neutra"
+          alt="Picanticos"
           className="aspect-[4/5] w-full rounded-[12px] object-cover"
         />
 

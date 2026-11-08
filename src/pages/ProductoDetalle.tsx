@@ -113,6 +113,7 @@ function FichaProducto({ producto }: { producto: Producto }) {
                     base={producto.imagenes[indiceActivo]}
                     alt={`${producto.nombre}, ${producto.tipo.toLowerCase()}`}
                     className="h-full w-full object-cover"
+                    encuadre={indiceActivo === 0 ? producto.encuadre : undefined}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -294,17 +295,6 @@ function FichaProducto({ producto }: { producto: Producto }) {
               </SeccionAcordeon>
             </div>
 
-            <div className="mt-8 flex items-center gap-5 rounded-[14px] bg-vino/35 p-6">
-              <Imagen
-                base="img/empaque"
-                alt="Empaque neutro de Picanticos"
-                className="h-[120px] w-[120px] shrink-0 rounded-lg object-cover"
-              />
-              <div>
-                <h2 className="font-display text-[20px]">Así llega tu pedido</h2>
-                <p className="mt-2 text-[14px] opacity-75">{envio.discrecion}</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const LINKS = [
   { href: '#pijamas', label: 'Pijamas' },
@@ -61,33 +62,33 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 h-[70px] border-b border-[rgba(243,217,198,0.18)] bg-noche/70 backdrop-blur-md">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-5">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={`${import.meta.env.BASE_URL}img/logo.png`}
             alt="Picanticos"
             className="h-10 w-auto"
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={{ pathname: '/', hash: link.href }}
               className="text-[13px] uppercase tracking-[0.1em] text-marfil/85 transition-colors hover:text-piel"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <a
-            href="#lenceria"
+          <Link
+            to={{ pathname: '/', hash: '#lenceria' }}
             className="inline-block border border-piel px-5 py-2 text-[13px] uppercase tracking-[0.1em] text-piel transition-colors hover:bg-piel hover:text-noche"
           >
             Comprar
-          </a>
+          </Link>
         </div>
 
         <button
@@ -145,22 +146,22 @@ export default function Navbar() {
 
               <nav className="mt-8 flex flex-col gap-6">
                 {LINKS.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
-                    href={link.href}
+                    to={{ pathname: '/', hash: link.href }}
                     onClick={() => setAbierto(false)}
                     className="text-[15px] uppercase tracking-[0.1em] text-marfil"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
-                <a
-                  href="#lenceria"
+                <Link
+                  to={{ pathname: '/', hash: '#lenceria' }}
                   onClick={() => setAbierto(false)}
                   className="mt-2 inline-block border border-piel px-5 py-2 text-center text-[13px] uppercase tracking-[0.1em] text-piel"
                 >
                   Comprar
-                </a>
+                </Link>
               </nav>
             </motion.div>
           </>

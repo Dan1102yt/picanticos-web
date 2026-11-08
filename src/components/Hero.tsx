@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
 import Imagen from './Imagen'
 import Seda from './Seda'
@@ -30,7 +31,7 @@ export default function Hero() {
             variants={item}
             className="text-[11px] uppercase tracking-[0.34em] text-rosa"
           >
-            Lencería y juegos · Colombia
+            Pijamas, lencería y juegos · Colombia
           </motion.p>
 
           <motion.h1
@@ -45,22 +46,22 @@ export default function Hero() {
 
           <motion.p variants={item} className="mt-6 max-w-md text-marfil/80">
             Piezas pensadas para tu cuerpo, no para la mirada de nadie más. Empaque
-            discreto, cambios sin preguntas y envíos a todo el país.
+            discreto, pago contraentrega y envíos a todo el país.
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#lenceria"
+            <Link
+              to={{ pathname: '/', hash: '#pijamas' }}
               className="inline-block bg-piel px-7 py-3 text-[13px] uppercase tracking-[0.1em] text-noche transition-opacity hover:opacity-90"
             >
               Ver la colección
-            </a>
-            <a
-              href="#tallas"
+            </Link>
+            <Link
+              to={{ pathname: '/', hash: '#tallas' }}
               className="inline-block border border-piel px-7 py-3 text-[13px] uppercase tracking-[0.1em] text-piel transition-colors hover:bg-piel hover:text-noche"
             >
               Encontrar mi talla
-            </a>
+            </Link>
           </motion.div>
         </div>
 

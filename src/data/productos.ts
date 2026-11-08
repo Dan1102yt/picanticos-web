@@ -33,6 +33,9 @@ export interface Producto {
   material: string
   cuidado: string
   imagenes: FotoProducto[]
+  // Recorte de la foto principal: acerca y centra la parte util de la foto
+  // del proveedor (quita marcas de agua o paneles con la referencia).
+  encuadre?: { escala: number; origen: string }
   colores?: string[]
 }
 
@@ -122,6 +125,9 @@ export const productos: Producto[] = [
     imagenes: [
       'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1318801/1728316312LC015.png',
     ],
+    // La foto trae el logo del proveedor arriba a la izquierda y un panel
+    // con la referencia LC015 a la derecha: este recorte los deja por fuera.
+    encuadre: { escala: 1.63, origen: '26% 13%' },
   },
 
   {
@@ -304,7 +310,9 @@ export const envio = {
 
 export const whatsapp = '573054686226'
 
-export const SITE_URL = 'https://picanticos.shop'
+// picanticos.shop esta vencido (nov-2026): mientras se renueva, todos los
+// enlaces (WhatsApp, canonical, sitemap) apuntan a GitHub Pages.
+export const SITE_URL = 'https://dan1102yt.github.io/picanticos-web'
 
 export const redes = {
   instagram: 'https://www.instagram.com/picanticosshop/',
