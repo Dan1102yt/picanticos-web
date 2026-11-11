@@ -365,9 +365,8 @@ export const envio = {
 
 export const whatsapp = '573054686226'
 
-// picanticos.shop esta vencido (nov-2026): mientras se renueva, todos los
-// enlaces (WhatsApp, canonical, sitemap) apuntan a GitHub Pages.
-export const SITE_URL = 'https://dan1102yt.github.io/picanticos-web'
+// Dominio propio desde nov-2026 (picanticos.shop se dejo vencer).
+export const SITE_URL = 'https://picanticosshop.com'
 
 export const redes = {
   instagram: 'https://www.instagram.com/picanticosshop/',

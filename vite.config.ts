@@ -20,6 +20,6 @@ function spaFallback(): Plugin {
 }
 
 export default defineConfig({
-  base: '/picanticos-web/',
+  base: '/',
   plugins: [react(), spaFallback()],
 })

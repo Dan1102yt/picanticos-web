@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dan1102yt.github.io/picanticos-web/sitemap.xml
+Sitemap: https://picanticosshop.com/sitemap.xml

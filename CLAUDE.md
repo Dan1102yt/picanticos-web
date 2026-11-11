@@ -9,7 +9,7 @@ discreción del envío.
 
 ## Stack
 React 18 + Vite + TypeScript + Tailwind + Framer Motion + React Router.
-Deploy en GitHub Pages con base '/picanticos-web/'.
+Deploy en GitHub Pages con dominio propio picanticosshop.com (base '/').
 Cierre de venta por WhatsApp con mensaje precargado. No hay carrito ni pasarela.
 
 ## Design tokens
@@ -51,7 +51,8 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - [x] 3 · Manifiesto de imágenes, ProductoDetalle, useWhatsApp, router
 - [x] 4 · Fallback 404, tallas, nosotros, cierre, footer, páginas legales
 - [x] 5 · Favicon, SEO, accesibilidad, performance, workflow de deploy
-- [ ] 6 · Dominio picanticos.shop
+- [x] 6 · Dominio propio picanticosshop.com (Hostinger, 3 años): base '/',
+      public/CNAME, SITE_URL, sitemap y robots. picanticos.shop se dejo vencer.
 - [x] 7 · Kimono Sensual (kimono-malla) descontinuado: fuera de productos.ts,
       /kimono-malla y /producto/kimono-malla ahora muestran
       src/pages/Descontinuado.tsx
