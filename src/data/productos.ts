@@ -352,8 +352,9 @@ export const envio = {
     'Interrapidísimo, Servientrega, Coordinadora o Envía, según tu ciudad',
   bogota: '3 días hábiles',
   nacional: '7 días hábiles',
+  valor: 14900,
   costo:
-    'El costo depende de tu ciudad y te lo confirmamos por WhatsApp antes de despachar.',
+    'Envío fijo de $14.900 a cualquier ciudad de Colombia. Lo pagas junto con tu pedido al recibir.',
   contraentrega:
     'Disponible en todas las ciudades. Pagas cuando lo tengas en la mano.',
   discrecion:

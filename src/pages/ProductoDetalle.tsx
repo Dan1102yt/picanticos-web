@@ -208,6 +208,9 @@ function FichaProducto({ producto }: { producto: Producto }) {
             <p className="mt-4 font-display text-[30px] text-piel">
               {formatearPrecio(producto.precio)}
             </p>
+            <p className="mt-1 text-[14px] opacity-90">
+              + envío fijo {formatearPrecio(envio.valor)} · pagas al recibir
+            </p>
 
             <span className="mt-4 inline-block rounded-full border border-[rgba(243,217,198,0.18)] bg-noche/70 px-3.5 py-1.5 text-[12px] text-piel backdrop-blur-sm">
               {producto.sensacion}

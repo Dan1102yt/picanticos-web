@@ -13,7 +13,7 @@ const ITEMS = [
   },
   {
     titulo: 'Envíos a todo el país',
-    descripcion: 'Despacho en 1 a 2 días hábiles.',
+    descripcion: 'Envío fijo de $14.900 a todo Colombia.',
   },
 ]
 

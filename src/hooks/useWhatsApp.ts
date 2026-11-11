@@ -1,4 +1,4 @@
-import { SITE_URL, formatearPrecio, whatsapp, type Producto } from '../data/productos'
+import { SITE_URL, envio, formatearPrecio, whatsapp, type Producto } from '../data/productos'
 
 interface PedidoWhatsApp {
   producto: Producto
@@ -17,7 +17,9 @@ export function useWhatsApp({ producto, talla, color }: PedidoWhatsApp) {
     lineas.push(`Talla: ${talla || 'por confirmar'}`)
   }
 
-  lineas.push(`Precio: ${formatearPrecio(producto.precio)} (pago contraentrega)`)
+  lineas.push(`Precio: ${formatearPrecio(producto.precio)}`)
+  lineas.push(`Envío: ${formatearPrecio(envio.valor)}`)
+  lineas.push(`Total a pagar al recibir: ${formatearPrecio(producto.precio + envio.valor)}`)
   lineas.push('')
   lineas.push('Mis datos para el envío:')
   lineas.push('Nombre:')
