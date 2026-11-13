@@ -23,7 +23,7 @@ export default function Hero() {
   const textoOpacidad = useTransform(scrollYProgress, [0, 0.75], [1, 0])
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden px-5 pb-20 pt-14 md:min-h-[calc(100svh-70px)] md:pt-20">
+    <section ref={ref} className="relative isolate overflow-hidden px-5 pb-20 pt-14 md:min-h-[calc(100svh-104px)] md:pt-20">
       <Seda />
       <LuzCursor />
 

@@ -14,13 +14,13 @@ const PASOS = [
   },
   {
     numero: '02',
-    titulo: 'Llega en caja neutra.',
-    texto: 'Sin marca ni descripción del contenido. Lo que hay adentro solo lo sabes tú.',
+    titulo: 'Llega sellado y discreto.',
+    texto: 'En bolsa cerrada, sin marca ni nada por fuera que diga qué hay adentro. Eso solo lo sabes tú.',
   },
   {
     numero: '03',
     titulo: 'Pagas cuando lo tienes en la mano.',
-    texto: 'Contraentrega en toda Colombia, con envío fijo de $14.900.',
+    texto: 'Contraentrega en toda Colombia, o por Nequi o Llave si prefieres. Envío fijo de $14.900, gratis llevando 3 prendas.',
   },
 ]
 
@@ -91,26 +91,26 @@ function Capa({
   )
 }
 
-function CajaNeutra({ progreso }: { progreso: MotionValue<number> }) {
+function BolsaSellada({ progreso }: { progreso: MotionValue<number> }) {
   const { ini, sale } = rango(1)
   const trazo = useTransform(progreso, [ini + 0.03, sale], [0, 1])
-  const tapa = useTransform(progreso, [ini + 0.1, sale], [-18, 0])
+  const sello = useTransform(progreso, [ini + 0.12, sale], [-26, 0])
+  const selloOpacidad = useTransform(progreso, [ini + 0.12, ini + 0.2], [0, 1])
   return (
     <div className="grid h-full w-full place-items-center bg-[radial-gradient(circle_at_50%_40%,#3B0A2A,#0C0609_70%)]">
-      <svg viewBox="0 0 200 170" className="w-[62%]" fill="none" stroke="#F3D9C6" strokeWidth="1.4">
-        {/* Cuerpo de la caja (isométrica, sin marca) */}
-        <motion.path d="M30 70 L100 100 L170 70 L170 130 L100 160 L30 130 Z" style={{ pathLength: trazo }} />
-        <motion.path d="M100 100 L100 160" style={{ pathLength: trazo }} />
-        {/* Tapa que baja y cierra */}
-        <motion.g style={{ y: tapa }}>
-          <motion.path d="M30 70 L100 40 L170 70 L100 100 Z" style={{ pathLength: trazo }} />
-        </motion.g>
+      <svg viewBox="0 0 200 200" className="w-[56%]" fill="none" stroke="#F3D9C6" strokeWidth="1.4" strokeLinejoin="round">
+        {/* Bolsa lisa, sin marca */}
         <motion.path
-          d="M66 55 L136 85"
-          stroke="#E36A8B"
-          strokeDasharray="3 4"
-          style={{ pathLength: trazo, opacity: trazo }}
+          d="M48 52 L152 52 L158 172 Q158 178 152 178 L48 178 Q42 178 42 172 Z"
+          style={{ pathLength: trazo }}
         />
+        {/* Pliegue del cierre */}
+        <motion.path d="M48 66 L152 66" style={{ pathLength: trazo }} />
+        {/* Cinta de sellado que baja y cierra */}
+        <motion.g style={{ y: sello, opacity: selloOpacidad }}>
+          <rect x="40" y="44" width="120" height="14" rx="2" stroke="#E36A8B" />
+          <path d="M52 51 L148 51" stroke="#E36A8B" strokeDasharray="3 4" />
+        </motion.g>
       </svg>
     </div>
   )
@@ -148,7 +148,7 @@ export default function SeccionRitual() {
               <Imagen base={FOTO_1} alt="Pijama Aurora en satín rojo" className="h-full w-full object-cover" />
             </Capa>
             <Capa progreso={scrollYProgress} i={1}>
-              <CajaNeutra progreso={scrollYProgress} />
+              <BolsaSellada progreso={scrollYProgress} />
             </Capa>
             <Capa progreso={scrollYProgress} i={2}>
               <Imagen base={FOTO_3} alt="Pijama Noche Lenta en satín rosado" className="h-full w-full object-cover" />

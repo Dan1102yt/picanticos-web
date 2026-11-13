@@ -12,6 +12,7 @@ React 19 + Vite + TypeScript + Tailwind + Motion (framer-motion) + Lenis + React
 (router de datos: las rutas viven en App.tsx -> rutas, no en <Routes>).
 Deploy en GitHub Pages con dominio propio picanticosshop.com (base '/').
 Cierre de venta por WhatsApp con mensaje precargado. No hay carrito ni pasarela.
+El empaque es una bolsa sellada sin marca: nunca escribir "caja".
 
 ## Design tokens
 Están en tailwind.config.js y no se cambian sobre la marcha:
@@ -72,6 +73,12 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
       foto al pasar el mouse, barra fija de compra en la ficha, grano.
       Todo respeta "reducir movimiento". BandaDiscrecion ya no se usa.
       img/empaque NO se usa: la caja tiene logo y la promesa es caja neutra.
+- [x] 11 · Empaque real: bolsa sellada sin marca (no caja). Pagos: contraentrega,
+      Nequi o Llave (datos solo por WhatsApp, nunca en la web). Envío gratis
+      con 3 prendas (envio.gratisDesde). Barra de anuncio, WhatsApp flotante
+      (oculto en la ficha), accesos por categoría. Ficha nueva: galería con
+      deslizar/zoom, muestras de color reales, guía de tallas en panel, total
+      desglosado, fila de confianza, preguntas frecuentes, carrusel.
 
 ## Reglas de movimiento
 - Solo animar transform, opacity y clip-path.

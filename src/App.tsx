@@ -6,6 +6,8 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import ScrollSuave from './components/ScrollSuave'
 import Grano from './components/Grano'
+import BarraAnuncio from './components/BarraAnuncio'
+import WhatsAppFlotante from './components/WhatsAppFlotante'
 // Home y ficha van en el paquete principal: la transición entre las dos
 // (la foto que viaja de la tarjeta a la ficha) no puede esperar a cargar.
 import Home from './pages/Home'
@@ -37,11 +39,13 @@ function Layout() {
     <MotionConfig reducedMotion="user">
       <ScrollSuave />
       <ScrollToTop />
+      <BarraAnuncio />
       <Navbar />
       <Suspense fallback={<CargandoRuta />}>
         <Outlet />
       </Suspense>
       <Footer />
+      <WhatsAppFlotante />
       <Grano />
     </MotionConfig>
   )

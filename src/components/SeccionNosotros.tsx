@@ -7,7 +7,7 @@ import { EASE_OUT } from '../lib/movimiento'
 
 const METRICAS = [
   { numero: 'Contraentrega', etiqueta: 'En todo el país' },
-  { numero: 'Caja neutra', etiqueta: 'En cada pedido' },
+  { numero: 'Empaque discreto', etiqueta: 'Sellado, sin marca' },
 ]
 
 export default function SeccionNosotros() {
@@ -61,7 +61,7 @@ export default function SeccionNosotros() {
           <Revelar delay={0.3}>
             <p className="mt-6 max-w-md text-marfil/90">
               Somos una tienda colombiana pequeña. Elegimos cada pieza con
-              proveedores nacionales, la enviamos en caja neutra y respondemos
+              proveedores nacionales, la enviamos sellada y discreta y respondemos
               por WhatsApp nosotros mismos — no un bot.
             </p>
           </Revelar>

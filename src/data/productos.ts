@@ -353,12 +353,16 @@ export const envio = {
   bogota: '3 días hábiles',
   nacional: '7 días hábiles',
   valor: 14900,
+  // Envío gratis desde esta cantidad de prendas en un mismo pedido.
+  gratisDesde: 3,
   costo:
-    'Envío fijo de $14.900 a cualquier ciudad de Colombia. Lo pagas junto con tu pedido al recibir.',
+    'Envío fijo de $14.900 a cualquier ciudad de Colombia. Gratis si llevas 3 prendas o más en el mismo pedido.',
   contraentrega:
     'Disponible en todas las ciudades. Pagas cuando lo tengas en la mano.',
   discrecion:
-    'La caja va sin marca ni descripción del contenido.',
+    'Llega en bolsa sellada y discreta: por fuera no hay marca ni nada que diga qué hay adentro.',
+  pago:
+    'Pagas al recibir (contraentrega) o, si prefieres, por Nequi o Llave. Los datos de pago te los enviamos por WhatsApp.',
   cambios:
     'Si la talla no te queda, escríbenos por WhatsApp en los 5 días siguientes a recibir tu pedido y coordinamos el cambio. El envío de ida y vuelta del cambio corre por tu cuenta.',
 }

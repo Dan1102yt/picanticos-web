@@ -13,6 +13,7 @@ export default function Envios() {
       <p>{envio.costo}</p>
       <p>{envio.contraentrega}</p>
       <p>{envio.discrecion}</p>
+      <p>{envio.pago}</p>
     </PaginaTexto>
   )
 }

@@ -19,7 +19,8 @@ export function useWhatsApp({ producto, talla, color }: PedidoWhatsApp) {
 
   lineas.push(`Precio: ${formatearPrecio(producto.precio)}`)
   lineas.push(`Envío: ${formatearPrecio(envio.valor)}`)
-  lineas.push(`Total a pagar al recibir: ${formatearPrecio(producto.precio + envio.valor)}`)
+  lineas.push(`Total: ${formatearPrecio(producto.precio + envio.valor)}`)
+  lineas.push('Pago: al recibir (o por Nequi / Llave)')
   lineas.push('')
   lineas.push('Mis datos para el envío:')
   lineas.push('Nombre:')

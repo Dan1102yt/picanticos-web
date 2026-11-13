@@ -41,7 +41,7 @@ export default function SeccionJuegos() {
               <h3 className="mt-4 font-display text-[30px]">Arma tu noche</h3>
               <p className="mt-4 max-w-xs text-[15px] text-marfil/90">
                 Un juego + una pieza de lencería o pijama, en un solo pedido y
-                en caja neutra.
+                en un solo empaque discreto.
               </p>
               <a
                 href={LINK_COMBO}

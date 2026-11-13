@@ -1,7 +1,7 @@
 const ITEMS = [
   {
-    titulo: 'Empaque neutro',
-    descripcion: 'Caja sin marca ni descripción del contenido.',
+    titulo: 'Empaque discreto',
+    descripcion: 'Bolsa sellada, sin marca ni nada que diga qué hay adentro.',
   },
   {
     titulo: 'Pagas al recibir',

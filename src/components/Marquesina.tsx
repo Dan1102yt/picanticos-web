@@ -1,11 +1,12 @@
 // Cinta infinita con las promesas de la tienda. Se pausa al pasar el mouse
 // y se queda quieta si el usuario pidió movimiento reducido.
 const FRASES = [
-  'Empaque neutro',
+  'Empaque discreto y sellado',
   'Pagas al recibir',
+  'Envío gratis llevando 3 prendas',
+  'Nequi o Llave',
   'Envío fijo de $14.900 a todo Colombia',
   'Asesoría de talla por WhatsApp',
-  'Satín que se siente',
 ]
 
 function Tira({ oculta = false }: { oculta?: boolean }) {

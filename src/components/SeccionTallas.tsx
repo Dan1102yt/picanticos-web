@@ -2,7 +2,7 @@ import TituloSeccion from './TituloSeccion'
 import Revelar from './Revelar'
 import { whatsapp } from '../data/productos'
 
-const FILAS = [
+export const TABLA_TALLAS = [
   { talla: 'S', busto: '80–86 cm', cintura: '60–66 cm', cadera: '86–92 cm', equivale: 'Blusa 6' },
   { talla: 'M', busto: '87–93 cm', cintura: '67–73 cm', cadera: '93–99 cm', equivale: 'Blusa 8–10' },
   { talla: 'L', busto: '94–100 cm', cintura: '74–80 cm', cadera: '100–106 cm', equivale: 'Blusa 12' },
@@ -46,7 +46,7 @@ export default function SeccionTallas() {
                 </tr>
               </thead>
               <tbody>
-                {FILAS.map((fila) => (
+                {TABLA_TALLAS.map((fila) => (
                   <tr
                     key={fila.talla}
                     className="border-t border-[rgba(243,217,198,0.18)]"
