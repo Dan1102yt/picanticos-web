@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { SITE_URL, redes } from '../data/productos'
 import Hero from '../components/Hero'
-import BandaDiscrecion from '../components/BandaDiscrecion'
+import Marquesina from '../components/Marquesina'
+import SeccionRitual from '../components/SeccionRitual'
 import SeccionPijamas from '../components/SeccionPijamas'
 import SeccionLenceria from '../components/SeccionLenceria'
 import SeccionJuegos from '../components/SeccionJuegos'
@@ -38,8 +39,9 @@ export default function Home() {
       </Helmet>
 
       <Hero />
-      <BandaDiscrecion />
+      <Marquesina />
       <SeccionPijamas />
+      <SeccionRitual />
       <SeccionLenceria />
       <SeccionJuegos />
       {/* TODO: faltan testimonios reales de clientas */}

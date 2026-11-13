@@ -1,5 +1,7 @@
 @echo off
 cd /d "%~dp0"
+echo Instalando dependencias...
+call npm install --no-audit --no-fund || (echo. & echo ERROR instalando dependencias. & pause & exit /b 1)
 echo Compilando la web...
 call npm run build || (echo. & echo ERROR en el build: no se publico nada. & pause & exit /b 1)
 git add -A

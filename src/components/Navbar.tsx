@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { EASE_IN_OUT, EASE_OUT } from '../lib/movimiento'
+import { pausarScroll, reanudarScroll } from '../lib/scroll'
 
 const LINKS = [
   { href: '#pijamas', label: 'Pijamas' },
@@ -17,12 +19,26 @@ export default function Navbar() {
   const [abierto, setAbierto] = useState(false)
   const panelRef = useRef<HTMLDivElement>(null)
   const botonRef = useRef<HTMLButtonElement>(null)
+  const [oculto, setOculto] = useState(false)
+  const [conFondo, setConFondo] = useState(false)
+  const { scrollY, scrollYProgress } = useScroll()
+  const progreso = useSpring(scrollYProgress, { stiffness: 200, damping: 30, mass: 0.4 })
+
+  // Se esconde al bajar (más espacio para las fotos) y vuelve al subir.
+  useMotionValueEvent(scrollY, 'change', (actual) => {
+    const anterior = scrollY.getPrevious() ?? 0
+    setConFondo(actual > 24)
+    if (abierto) return
+    if (actual > 160 && actual > anterior + 4) setOculto(true)
+    else if (actual < anterior - 4 || actual < 160) setOculto(false)
+  })
 
   useEffect(() => {
     if (!abierto) return
 
     const scrollPrevio = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    pausarScroll()
 
     const panel = panelRef.current
     const focusables = panel
@@ -55,12 +71,24 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.body.style.overflow = scrollPrevio
+      reanudarScroll()
       botonRef.current?.focus()
     }
   }, [abierto])
 
   return (
-    <header className="sticky top-0 z-50 h-[70px] border-b border-[rgba(243,217,198,0.18)] bg-noche/70 backdrop-blur-md">
+    <>
+    <motion.header
+      className={`sticky top-0 z-50 h-[70px] border-b transition-[background-color,border-color] duration-500 ${
+        conFondo
+          ? 'border-[rgba(243,217,198,0.18)] bg-noche/75 backdrop-blur-md'
+          : 'border-transparent bg-noche/0'
+      }`}
+      style={{ viewTransitionName: 'barra-nav' }}
+      initial={{ y: -70 }}
+      animate={{ y: oculto ? -72 : 0 }}
+      transition={{ duration: oculto ? 0.3 : 0.45, ease: oculto ? EASE_IN_OUT : EASE_OUT }}
+    >
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-5">
         <Link to="/" className="flex items-center">
           <img
@@ -75,7 +103,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               to={{ pathname: '/', hash: link.href }}
-              className="text-[13px] uppercase tracking-[0.1em] text-marfil/85 transition-colors hover:text-piel"
+              className="enlace-linea pb-0.5 text-[13px] uppercase tracking-[0.1em] text-marfil/85 hover:text-piel"
             >
               {link.label}
             </Link>
@@ -85,7 +113,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             to={{ pathname: '/', hash: '#lenceria' }}
-            className="inline-block border border-piel px-5 py-2 text-[13px] uppercase tracking-[0.1em] text-piel transition-colors hover:bg-piel hover:text-noche"
+            className="boton-relleno inline-block rounded-full border border-piel px-6 py-2 text-[13px] uppercase tracking-[0.1em] text-piel"
           >
             Comprar
           </Link>
@@ -113,6 +141,13 @@ export default function Navbar() {
         </button>
       </div>
 
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-[-1px] h-px origin-left bg-rosa"
+        style={{ scaleX: progreso }}
+      />
+    </motion.header>
+
       <AnimatePresence>
         {abierto && (
           <>
@@ -131,7 +166,7 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.28 }}
+              transition={{ duration: 0.45, ease: EASE_OUT }}
             >
               <div className="flex justify-end">
                 <button
@@ -144,16 +179,22 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <nav className="mt-8 flex flex-col gap-6">
-                {LINKS.map((link) => (
-                  <Link
+              <nav className="mt-8 flex flex-col gap-5">
+                {LINKS.map((link, i) => (
+                  <motion.div
                     key={link.href}
-                    to={{ pathname: '/', hash: link.href }}
-                    onClick={() => setAbierto(false)}
-                    className="text-[15px] uppercase tracking-[0.1em] text-marfil"
+                    initial={{ opacity: 0, x: 24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, ease: EASE_OUT, delay: 0.08 + i * 0.05 }}
                   >
-                    {link.label}
-                  </Link>
+                    <Link
+                      to={{ pathname: '/', hash: link.href }}
+                      onClick={() => setAbierto(false)}
+                      className="font-display text-[30px] text-marfil"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
                 <Link
                   to={{ pathname: '/', hash: '#lenceria' }}
@@ -167,6 +208,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }

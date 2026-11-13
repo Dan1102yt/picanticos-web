@@ -1,24 +1,23 @@
 import type { ReactNode } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { EASE_OUT } from '../lib/movimiento'
 
 interface RevelarProps {
   children: ReactNode
   delay?: number
+  className?: string
 }
 
-export default function Revelar({ children, delay = 0 }: RevelarProps) {
-  const reducirMovimiento = useReducedMotion()
-
-  if (reducirMovimiento) {
-    return <>{children}</>
-  }
-
+// Entrada al hacer scroll: sube 40px y aparece, con ease-out.
+// Con "reducir movimiento" MotionConfig deja solo el fundido.
+export default function Revelar({ children, delay = 0, className }: RevelarProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      className={className}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true, margin: '-8% 0px' }}
+      transition={{ duration: 0.9, ease: EASE_OUT, delay }}
     >
       {children}
     </motion.div>

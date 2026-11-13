@@ -1,3 +1,5 @@
+import TituloSeccion from './TituloSeccion'
+import Revelar from './Revelar'
 import { whatsapp } from '../data/productos'
 
 const FILAS = [
@@ -16,20 +18,15 @@ export default function SeccionTallas() {
   return (
     <section id="tallas" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
-          Antes de comprar
-        </p>
-        <h2
-          className="mt-4 font-display leading-[1.05]"
-          style={{ fontSize: 'clamp(34px, 4.4vw, 58px)' }}
+        <TituloSeccion
+          eyebrow="Antes de comprar"
+          titulo={<>Tu talla, <span className="italic text-rosa">sin adivinar</span></>}
         >
-          Tu talla, <span className="italic text-rosa">sin adivinar</span>
-        </h2>
-        <p className="mt-5 max-w-md text-marfil/90">
           Mídete con una cinta sobre la piel, sin apretar. Si quedas entre dos
           tallas, pide la mayor.
-        </p>
+        </TituloSeccion>
 
+        <Revelar>
         <div
           className="mt-12 rounded-[16px] bg-white/[0.02] p-9"
           style={{ border: '1px solid rgba(243,217,198,.18)' }}
@@ -67,6 +64,7 @@ export default function SeccionTallas() {
             </table>
           </div>
         </div>
+        </Revelar>
 
         <p className="mt-6 max-w-md text-[14px] text-marfil/90">
           ¿Dudas con tu medida?{' '}

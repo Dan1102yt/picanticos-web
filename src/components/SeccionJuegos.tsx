@@ -1,6 +1,7 @@
 import { juegos, whatsapp } from '../data/productos'
 import ProductoCard from './ProductoCard'
 import Revelar from './Revelar'
+import TituloSeccion from './TituloSeccion'
 
 const MENSAJE_COMBO = encodeURIComponent(
   'Hola, quiero armar el combo "Arma tu noche" (un juego + una pieza).'
@@ -11,28 +12,22 @@ export default function SeccionJuegos() {
   return (
     <section id="juegos" className="px-5 py-16 md:py-[110px]">
       <div className="mx-auto max-w-6xl">
-        <p className="text-[12px] uppercase tracking-[0.26em] text-rosa">
-          Juegos
-        </p>
-        <h2
-          className="mt-4 font-display leading-[1.05]"
-          style={{ fontSize: 'clamp(34px, 4.4vw, 58px)' }}
+        <TituloSeccion
+          eyebrow="Juegos"
+          titulo={<>Para <span className="italic text-rosa">los dos</span></>}
         >
-          Para <span className="italic text-rosa">los dos</span>
-        </h2>
-        <p className="mt-5 max-w-md text-marfil/90">
           Cuando la conversación ya no alcanza. Retos, risas y una excusa para
           apagar el celular.
-        </p>
+        </TituloSeccion>
 
         <div className="mt-12 grid grid-cols-1 items-stretch gap-[26px] md:grid-cols-2 lg:grid-cols-4">
           {juegos.map((juego, index) => (
-            <Revelar key={juego.slug} delay={index * 0.08}>
+            <Revelar key={juego.slug} delay={(index % 4) * 0.1} className="h-full">
               <ProductoCard producto={juego} />
             </Revelar>
           ))}
 
-          <Revelar delay={juegos.length * 0.08}>
+          <Revelar delay={(juegos.length % 4) * 0.1} className="h-full">
             <div
               className="flex h-full flex-col items-center justify-center rounded-[14px] border border-[rgba(243,217,198,0.18)] px-8 py-10 text-center"
               style={{
@@ -52,7 +47,7 @@ export default function SeccionJuegos() {
                 href={LINK_COMBO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block rounded-full bg-piel px-7 py-3 text-[12px] uppercase tracking-[0.2em] text-noche transition-opacity hover:opacity-90"
+                className="boton-brillo mt-8 inline-block rounded-full bg-piel px-7 py-3 text-[12px] uppercase tracking-[0.2em] text-noche"
               >
                 Armar combo
               </a>

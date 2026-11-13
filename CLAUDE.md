@@ -8,7 +8,8 @@ dueña de la decisión, no observada. El argumento de venta más importante es l
 discreción del envío.
 
 ## Stack
-React 18 + Vite + TypeScript + Tailwind + Framer Motion + React Router.
+React 19 + Vite + TypeScript + Tailwind + Motion (framer-motion) + Lenis + React Router
+(router de datos: las rutas viven en App.tsx -> rutas, no en <Routes>).
 Deploy en GitHub Pages con dominio propio picanticosshop.com (base '/').
 Cierre de venta por WhatsApp con mensaje precargado. No hay carrito ni pasarela.
 
@@ -63,5 +64,20 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - [x] 9 · Fotos por color en fotos-originales/ (<slug>-<color>.jpg), procesadas;
       la ficha cambia de foto al elegir color (fotosPorColor en productos.ts).
       Medianoche y Velo Blanco siguen con foto del CDN de Dropi.
+- [x] 10 · Movimiento premium: curvas en src/lib/movimiento.ts (ease-out para
+      entradas, ease-in-out para movimientos, resortes para cursor), Lenis
+      (scroll suave en computador), View Transitions (la foto viaja de la
+      tarjeta a la ficha), títulos por máscara, marquesina, sección fijada
+      "Así de simple" (SeccionRitual), tarjetas con inclinación 3D y segunda
+      foto al pasar el mouse, barra fija de compra en la ficha, grano.
+      Todo respeta "reducir movimiento". BandaDiscrecion ya no se usa.
+      img/empaque NO se usa: la caja tiene logo y la promesa es caja neutra.
+
+## Reglas de movimiento
+- Solo animar transform, opacity y clip-path.
+- Entradas con EASE_OUT; lo que se mueve en pantalla con EASE_IN_OUT.
+- UI (botones, chips) 150-300 ms; entradas editoriales hasta ~1 s.
+- Hover/tilt/imán solo con puntero fino (tienePunteroFino()).
+- Nada de urgencia falsa: sin contadores, sin "quedan 2", sin "X personas viendo".
 
 Actualiza esta lista al final de cada sesión.
