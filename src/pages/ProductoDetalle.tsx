@@ -39,7 +39,7 @@ const TONOS: Record<string, string> = {
   Fucsia: '#D6247A',
   Verde: '#2F6B4F',
   Azul: '#2C4A9A',
-  Turquí: '#1BB0BE',
+  Turquí: '#1F2A5C', // turquí = azul oscuro (navy) en Colombia
 }
 
 export default function ProductoDetalle() {
@@ -75,6 +75,14 @@ function FichaProducto({ producto }: { producto: Producto }) {
   const [seccionAbierta, setSeccionAbierta] = useState<SeccionId | null>(null)
   const [guiaAbierta, setGuiaAbierta] = useState(false)
   const cerrarGuia = useCallback(() => setGuiaAbierta(false), [])
+  // Vista previa flotante: al cambiar de color con la galería fuera de pantalla
+  // (celular), la foto nueva aparece al lado sin mover la página.
+  const [vistaPrevia, setVistaPrevia] = useState<{ foto: FotoProducto; color: string; id: number } | null>(null)
+  useEffect(() => {
+    if (!vistaPrevia) return
+    const t = window.setTimeout(() => setVistaPrevia(null), 2600)
+    return () => window.clearTimeout(t)
+  }, [vistaPrevia])
   const galeriaRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLAnchorElement>(null)
   const [ctaFuera, setCtaFuera] = useState(false)
@@ -120,10 +128,10 @@ function FichaProducto({ producto }: { producto: Producto }) {
     if (!foto) return
     const indice = imagenes.indexOf(foto)
     irAFoto(indice >= 0 ? indice : 0)
-    // En celular la foto queda arriba, fuera de vista: subir hasta ella.
+    // Si la galería no se ve, se muestra la foto en una vista previa flotante.
     const galeria = galeriaRef.current
-    if (galeria && galeria.getBoundingClientRect().bottom < 80) {
-      irA(galeria, { inmediato: !!reducirMovimiento })
+    if (galeria && galeria.getBoundingClientRect().bottom < 120) {
+      setVistaPrevia({ foto, color, id: Date.now() })
     }
   }
 
@@ -403,6 +411,31 @@ function FichaProducto({ producto }: { producto: Producto }) {
       {sugeridos.length > 0 && <Carrusel productos={sugeridos} />}
 
       <PanelTallas abierto={guiaAbierta} onCerrar={cerrarGuia} />
+
+      <AnimatePresence>
+        {vistaPrevia && (
+          <motion.button
+            key={vistaPrevia.id}
+            type="button"
+            aria-label={`Ver la foto en ${vistaPrevia.color}`}
+            onClick={() => {
+              if (galeriaRef.current) irA(galeriaRef.current, { inmediato: !!reducirMovimiento })
+              setVistaPrevia(null)
+            }}
+            className="fixed left-4 z-40 w-[132px] overflow-hidden rounded-[14px] border border-piel/60 bg-noche text-left shadow-[0_20px_50px_-10px_rgba(0,0,0,0.8)]"
+            style={{ bottom: ctaFuera ? 92 : 20 }}
+            initial={{ opacity: 0, y: 30, scale: 0.85, rotate: -4 }}
+            animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, y: 16, scale: 0.92 }}
+            transition={{ type: 'spring', stiffness: 360, damping: 26 }}
+          >
+            <Imagen base={vistaPrevia.foto} alt="" className="aspect-[3/4] w-full object-cover" />
+            <span className="block px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-piel">
+              {vistaPrevia.color} · ver
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Barra fija: el botón de compra siempre a un toque */}
       <AnimatePresence>

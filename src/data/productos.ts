@@ -64,14 +64,17 @@ export const productos: Producto[] = [
     material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
+      'img/productos/noche-lenta-rojo-estudio',
+      'img/productos/noche-lenta-rosado-estudio',
+      'img/productos/noche-lenta-negro-estudio',
       'img/productos/noche-lenta-rojo',
       'img/productos/noche-lenta-rosado',
       'img/productos/noche-lenta-negro',
     ],
     fotosPorColor: {
-      Rojo: 'img/productos/noche-lenta-rojo',
-      Rosado: 'img/productos/noche-lenta-rosado',
-      Negro: 'img/productos/noche-lenta-negro',
+      Rojo: 'img/productos/noche-lenta-rojo-estudio',
+      Rosado: 'img/productos/noche-lenta-rosado-estudio',
+      Negro: 'img/productos/noche-lenta-negro-estudio',
     },
   },
 
@@ -92,14 +95,17 @@ export const productos: Producto[] = [
     material: 'Satín (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
+      'img/productos/aurora-rojo-estudio',
+      'img/productos/aurora-negro-estudio',
+      'img/productos/aurora-rosado-estudio',
       'img/productos/aurora-rojo',
       'img/productos/aurora-negro',
       'img/productos/aurora-rosado',
     ],
     fotosPorColor: {
-      Rojo: 'img/productos/aurora-rojo',
-      Negro: 'img/productos/aurora-negro',
-      Rosado: 'img/productos/aurora-rosado',
+      Rojo: 'img/productos/aurora-rojo-estudio',
+      Negro: 'img/productos/aurora-negro-estudio',
+      Rosado: 'img/productos/aurora-rosado-estudio',
     },
   },
 
@@ -120,14 +126,17 @@ export const productos: Producto[] = [
     material: 'Satín y encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer ni usar secadora. Planchar a temperatura baja y por el revés.',
     imagenes: [
+      'img/productos/brisa-negra-estudio',
+      'img/productos/brisa-fucsia-estudio',
+      'img/productos/brisa-verde-estudio',
       'img/productos/brisa-negra',
       'img/productos/brisa-fucsia',
       'img/productos/brisa-verde',
     ],
     fotosPorColor: {
-      Negra: 'img/productos/brisa-negra',
-      Fucsia: 'img/productos/brisa-fucsia',
-      Verde: 'img/productos/brisa-verde',
+      Negra: 'img/productos/brisa-negra-estudio',
+      Fucsia: 'img/productos/brisa-fucsia-estudio',
+      Verde: 'img/productos/brisa-verde-estudio',
     },
   },
 
@@ -147,11 +156,8 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
-      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1318801/1728316312LC015.png',
+      'img/productos/medianoche-estudio',
     ],
-    // La foto trae el logo del proveedor arriba a la izquierda y un panel
-    // con la referencia LC015 a la derecha: este recorte los deja por fuera.
-    encuadre: { escala: 1.63, origen: '26% 13%' },
   },
 
   {
@@ -171,6 +177,11 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
+      'img/productos/liguero-vela-negro-estudio',
+      'img/productos/liguero-vela-rojo-estudio',
+      'img/productos/liguero-vela-blanco-estudio',
+      'img/productos/liguero-vela-azul-estudio',
+      'img/productos/liguero-vela-bordo-estudio',
       'img/productos/liguero-vela-negro',
       'img/productos/liguero-vela-rojo',
       'img/productos/liguero-vela-blanco',
@@ -178,11 +189,11 @@ export const productos: Producto[] = [
       'img/productos/liguero-vela-bordo',
     ],
     fotosPorColor: {
-      Negro: 'img/productos/liguero-vela-negro',
-      Rojo: 'img/productos/liguero-vela-rojo',
-      Blanco: 'img/productos/liguero-vela-blanco',
-      Azul: 'img/productos/liguero-vela-azul',
-      'Bordó': 'img/productos/liguero-vela-bordo',
+      Negro: 'img/productos/liguero-vela-negro-estudio',
+      Rojo: 'img/productos/liguero-vela-rojo-estudio',
+      Blanco: 'img/productos/liguero-vela-blanco-estudio',
+      Azul: 'img/productos/liguero-vela-azul-estudio',
+      'Bordó': 'img/productos/liguero-vela-bordo-estudio',
     },
   },
 
@@ -203,6 +214,11 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
+      'img/productos/contorno-rojo-estudio',
+      'img/productos/contorno-blanco-estudio',
+      'img/productos/contorno-azul-estudio',
+      'img/productos/contorno-turqui-estudio',
+      'img/productos/contorno-bordo-estudio',
       'img/productos/contorno-rojo',
       'img/productos/contorno-blanco',
       'img/productos/contorno-azul',
@@ -210,11 +226,11 @@ export const productos: Producto[] = [
       'img/productos/contorno-bordo',
     ],
     fotosPorColor: {
-      Rojo: 'img/productos/contorno-rojo',
-      Blanco: 'img/productos/contorno-blanco',
-      Azul: 'img/productos/contorno-azul',
-      'Turquí': 'img/productos/contorno-turqui',
-      'Bordó': 'img/productos/contorno-bordo',
+      Rojo: 'img/productos/contorno-rojo-estudio',
+      Blanco: 'img/productos/contorno-blanco-estudio',
+      Azul: 'img/productos/contorno-azul-estudio',
+      'Turquí': 'img/productos/contorno-turqui-estudio',
+      'Bordó': 'img/productos/contorno-bordo-estudio',
     },
   },
 
@@ -235,6 +251,7 @@ export const productos: Producto[] = [
     material: 'Encaje (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
+      'img/productos/velo-blanco-estudio',
       'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1673176/173963342513.jpg',
     ],
   },
@@ -256,12 +273,14 @@ export const productos: Producto[] = [
     material: 'Tela elástica (composición exacta por confirmar con la etiqueta del proveedor).',
     cuidado: 'Lavar a mano con agua fría y jabón suave. No retorcer, no usar blanqueador ni secadora. Secar a la sombra.',
     imagenes: [
+      'img/productos/segunda-piel-negro-estudio',
+      'img/productos/segunda-piel-rojo-estudio',
       'img/productos/segunda-piel-negro',
       'img/productos/segunda-piel-rojo',
     ],
     fotosPorColor: {
-      Negro: 'img/productos/segunda-piel-negro',
-      Rojo: 'img/productos/segunda-piel-rojo',
+      Negro: 'img/productos/segunda-piel-negro-estudio',
+      Rojo: 'img/productos/segunda-piel-rojo-estudio',
     },
   },
 
@@ -281,6 +300,7 @@ export const productos: Producto[] = [
     material: 'Madera natural con impresión al calor.',
     cuidado: 'Mantener en lugar seco. Limpiar con paño seco.',
     imagenes: [
+      'img/productos/torre-pasion-ambiente',
       'img/productos/torre-pasion-1',
       'img/productos/torre-pasion-2',
       'img/productos/torre-pasion-3',
@@ -303,6 +323,7 @@ export const productos: Producto[] = [
     material: 'Bloques de madera y cartas impresas.',
     cuidado: 'Mantener en lugar seco. Limpiar con paño seco.',
     imagenes: [
+      'img/productos/noche-completa-ambiente',
       'img/productos/noche-completa-1',
       'img/productos/noche-completa-2',
     ],
@@ -324,6 +345,7 @@ export const productos: Producto[] = [
     material: 'Tablero impreso.',
     cuidado: 'Mantener en lugar seco.',
     imagenes: [
+      'img/productos/parques-de-dos-ambiente',
       'img/productos/parques-de-dos-1',
     ],
   },

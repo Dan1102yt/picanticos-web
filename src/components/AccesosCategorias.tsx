@@ -6,9 +6,9 @@ import type { ClaveImagen } from '../data/claves'
 import { EASE_OUT } from '../lib/movimiento'
 
 const ACCESOS: { titulo: string; italica: string; ancla: string; foto: ClaveImagen; cantidad: number }[] = [
-  { titulo: 'Para', italica: 'dormir', ancla: '#pijamas', foto: 'img/productos/noche-lenta-rojo', cantidad: pijamas.length },
-  { titulo: 'Para', italica: 'ti', ancla: '#lenceria', foto: 'img/productos/contorno-azul', cantidad: lenceria.length },
-  { titulo: 'Para', italica: 'los dos', ancla: '#juegos', foto: 'img/productos/noche-completa-1', cantidad: juegos.length },
+  { titulo: 'Para', italica: 'dormir', ancla: '#pijamas', foto: 'img/productos/noche-lenta-rojo-estudio', cantidad: pijamas.length },
+  { titulo: 'Para', italica: 'ti', ancla: '#lenceria', foto: 'img/productos/liguero-vela-bordo-estudio', cantidad: lenceria.length },
+  { titulo: 'Para', italica: 'los dos', ancla: '#juegos', foto: 'img/productos/noche-completa-ambiente', cantidad: juegos.length },
 ]
 
 // Tres puertas de entrada al catálogo, justo después de la portada.

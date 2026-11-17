@@ -319,5 +319,213 @@
     ],
     "w": 679,
     "h": 679
+  },
+  "img/productos/aurora-rojo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/noche-lenta-negro-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/noche-lenta-rosado-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/noche-lenta-rojo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/aurora-negro-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/aurora-rosado-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/brisa-negra-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/brisa-fucsia-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/brisa-verde-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/liguero-vela-negro-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/liguero-vela-rojo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/liguero-vela-blanco-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/liguero-vela-azul-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/liguero-vela-bordo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/contorno-rojo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/contorno-blanco-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/contorno-azul-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/contorno-turqui-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/contorno-bordo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/segunda-piel-negro-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/segunda-piel-rojo-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/medianoche-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/velo-blanco-estudio": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/torre-pasion-ambiente": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/noche-completa-ambiente": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
+  },
+  "img/productos/parques-de-dos-ambiente": {
+    "widths": [
+      480,
+      768
+    ],
+    "w": 928,
+    "h": 1152
   }
 }

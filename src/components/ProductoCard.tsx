@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useViewTransitionState } from 'react-router-dom'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { Producto } from '../data/productos'
 import { formatearPrecio } from '../data/productos'
 import Imagen from './Imagen'
@@ -24,6 +24,28 @@ export default function ProductoCard({ producto }: ProductoCardProps) {
   const viajando = useViewTransitionState(destino)
   const alterna = fotoAlterna(producto)
   const [encima, setEncima] = useState(false)
+
+  // En celular no hay hover: cuando la tarjeta está a la vista, alterna sola
+  // entre la foto principal y la segunda (otro color), como un "respiro".
+  const tarjetaRef = useRef<HTMLDivElement>(null)
+  const enVista = useInView(tarjetaRef, { amount: 0.7 })
+  const [auto, setAuto] = useState(false)
+  useEffect(() => {
+    if (!alterna || !enVista || tienePunteroFino()) {
+      setAuto(false)
+      return
+    }
+    let t: number
+    const ciclo = (siguiente: boolean, espera: number) => {
+      t = window.setTimeout(() => {
+        setAuto(siguiente)
+        ciclo(!siguiente, siguiente ? 2200 : 2800)
+      }, espera)
+    }
+    ciclo(true, 1200)
+    return () => window.clearTimeout(t)
+  }, [alterna, enVista])
+  const verAlterna = encima || auto
 
   // Inclinación 3D que sigue al cursor (solo computador), con resorte.
   const px = useMotionValue(0)
@@ -50,7 +72,7 @@ export default function ProductoCard({ producto }: ProductoCardProps) {
   }
 
   return (
-    <div style={{ perspective: 1100 }} className="h-full">
+    <div ref={tarjetaRef} style={{ perspective: 1100 }} className="h-full">
       <motion.div
         onPointerMove={mover}
         onPointerEnter={() => tienePunteroFino() && setEncima(true)}
@@ -81,8 +103,8 @@ export default function ProductoCard({ producto }: ProductoCardProps) {
               <motion.div
                 className="absolute inset-0"
                 initial={false}
-                animate={{ opacity: encima ? 1 : 0, scale: encima ? 1 : 1.08 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                animate={{ opacity: verAlterna ? 1 : 0, scale: verAlterna ? 1 : 1.08 }}
+                transition={{ duration: auto ? 0.9 : 0.6, ease: [0.22, 1, 0.36, 1] }}
                 aria-hidden="true"
               >
                 <Imagen base={alterna} alt="" className="h-full w-full object-cover" />

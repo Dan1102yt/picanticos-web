@@ -1,6 +1,7 @@
 import { juegos, whatsapp } from '../data/productos'
 import ProductoCard from './ProductoCard'
 import Revelar from './Revelar'
+import DeslizaHint from './DeslizaHint'
 import TituloSeccion from './TituloSeccion'
 
 const MENSAJE_COMBO = encodeURIComponent(
@@ -20,14 +21,15 @@ export default function SeccionJuegos() {
           apagar el celular.
         </TituloSeccion>
 
-        <div className="mt-12 grid grid-cols-1 items-stretch gap-[26px] md:grid-cols-2 lg:grid-cols-4">
+        <DeslizaHint />
+        <div className="-mx-5 mt-10 flex snap-x snap-mandatory scroll-pl-5 gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] md:mx-0 md:mt-12 md:grid md:gap-[26px] md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden md:grid-cols-2 lg:grid-cols-4 md:items-stretch">
           {juegos.map((juego, index) => (
-            <Revelar key={juego.slug} delay={(index % 4) * 0.1} className="h-full">
+            <Revelar key={juego.slug} delay={(index % 4) * 0.1} className="h-full w-[80%] shrink-0 snap-start md:w-auto">
               <ProductoCard producto={juego} />
             </Revelar>
           ))}
 
-          <Revelar delay={(juegos.length % 4) * 0.1} className="h-full">
+          <Revelar delay={(juegos.length % 4) * 0.1} className="h-full w-[80%] shrink-0 snap-start md:w-auto">
             <div
               className="flex h-full flex-col items-center justify-center rounded-[14px] border border-[rgba(243,217,198,0.18)] px-8 py-10 text-center"
               style={{

@@ -86,5 +86,11 @@ El logo está excluido del pipeline: se usa directo desde public/img/logo.png.
 - UI (botones, chips) 150-300 ms; entradas editoriales hasta ~1 s.
 - Hover/tilt/imán solo con puntero fino (tienePunteroFino()).
 - Nada de urgencia falsa: sin contadores, sin "quedan 2", sin "X personas viendo".
+- [x] 12 · Fotos de estudio con IA (WaveSpeed, Nano Banana 2) a partir de las
+      fotos reales del proveedor: <slug>-<color>-estudio y <juego>-ambiente en
+      public/img/productos (480/768). Van primero en imagenes y en
+      fotosPorColor; las fotos con modelo quedan después en la galería.
+      Medianoche ya no usa la foto del CDN ni el encuadre. "Turquí" = azul
+      oscuro (navy), no turquesa.
 
 Actualiza esta lista al final de cada sesión.
